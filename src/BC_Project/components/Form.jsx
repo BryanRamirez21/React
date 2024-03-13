@@ -1,60 +1,57 @@
 import React from 'react'
 import { useState, useRef }  from 'react'
-import { useForm } from 'react-hook-form'
-import axios from 'axios';
+import { useForm } from 'react-hook-form';
+import useResultsStore from '../state/stores/result';
 
 
-export default function Form() {
+const Form = () => {
 
-    const APaterno = useRef();
-    const AMaterno = useRef();
-    const Nombres = useRef();
-    const FechaN = useRef();
+    const onSearchResults = useResultsStore((state) => state.onSearchResults);
 
-    async function submit(e){
-        e.preventDefault();
-
-        const options = {
-        method: 'GET',
-        url: 'https://jfhe88-rfc-generator-mexico.p.rapidapi.com/rest1/rfc/get',
-        params: {
-            apellido_materno: AMaterno.current.value,
-            apellido_paterno: APaterno.current.value,
-            fecha: FechaN.current.value,
-            nombre: Nombres.current.value,
-            solo_homoclave: '1'
-        },
-        headers: {
-            'X-RapidAPI-Key': 'f0e0acb914msh15c7e51e9cab0e5p17501ejsnee5b2dc22faa',
-            'X-RapidAPI-Host': 'jfhe88-rfc-generator-mexico.p.rapidapi.com'
-        }
-        };
-
-        try {
-            const response = await axios.request(options);
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        onSearchResults(data);
+    };
 
   return (
     <div>
-        <form style={{display:"flex", flexDirection:'column'}}>
+        <form style={{display:"flex", flexDirection:'column'}} onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor='APaterno'>Apellido paterno</label>
-            <input type='text' name='APaterno' ref={APaterno}></input>
+            <input 
+                type='text' 
+                name='APaterno'
+                id='APaterno' 
+                {...register("APaterno", { required: "Este campo es obligatorio" })}>
+            </input>
 
-            <label htmlFor='APaterno'>Apellido materno</label>
-            <input type='text' name='AMaterno' ref={AMaterno}></input>
+            <label htmlFor='AMaterno'>Apellido materno</label>
+            <input 
+                type='text' 
+                name='AMaterno'
+                id='AMaterno'
+                {...register("AMaterno", { required: "Este campo es obligatorio" })}>
+            </input>
 
-            <label htmlFor='APaterno'>Nombre(s)</label>
-            <input type='text' name='Nombres' ref={Nombres}></input>
+            <label htmlFor='Nombres'>Nombre(s)</label>
+            <input 
+                type='text' 
+                name='Nombres' 
+                id='Nombres'
+                {...register("Nombres", { required: "Este campo es obligatorio" })}>
+            </input>
 
             <label htmlFor='FechaN'>Fecha de nacimiento</label>
-            <input type='date' name='FechaN' ref={FechaN}></input>
+            <input 
+                type='date' 
+                name='FechaN' 
+                id='FechaN'
+                {...register("FechaN", { required: "Este campo es obligatorio" })}>
+            </input>
 
-            <button type='submit' onClick={submit}>Enviar</button>
+            <button type='submit'>Enviar</button>
         </form>
     </div>
   )
 }
+
+export default Form;
