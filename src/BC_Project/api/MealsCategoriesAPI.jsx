@@ -9,10 +9,10 @@ const apiMealsCategories = async () => {
     };
 
     try {
-        const response = await axios(options); // Usar method: 'GET' aquí
+        const response = await axios(options);
         return response.data;
     } catch (error) {
-        throw error; // Lanza el error para que sea manejado por el código que llama a esta función
+        throw error; 
     }
 }
 
