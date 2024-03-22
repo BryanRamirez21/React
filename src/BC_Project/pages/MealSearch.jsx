@@ -39,7 +39,11 @@ const MealSearch = () => {
             ...data,
             ingredient: mealCategory.strCategory
         }
-        onSearchMeals(data);
+        handleMealClick(data);
+    };
+
+    const handleMealClick = (data) => {
+        navigate(`/Meals`, { state: { data } });
     };
 
     return (
@@ -54,8 +58,7 @@ const MealSearch = () => {
             )}
 
             <MealSearchForm onSubmit={onSubmit}/>
-            
-            
+
         </div>
     );
 };

@@ -10,28 +10,16 @@ const apiMealsOpts = async (data) => {
         'nutrition-type': 'cooking',
     });
 
-
-
-    if (Array.isArray(data.health)) {
-        data.health.forEach(val => {
-            params.append('health', val);
-        });
-    } else if (data.health) {
-        params.append('health', data.health);
-    }
+    data.health.forEach(val => {
+        params.append('health', val);
+    });
 
     if(data.calories.trim() != "")
         params.append('calories', data.calories);
 
-    if (Array.isArray(data.category)) {
-        data.category.forEach(val => {
-            params.append('category', val);
-        });
-    } else if (data.category) {
-        params.append('category', data.category);
-    }
-
-
+    data.category.forEach(val => {
+        params.append('category', val);
+    });
 
     const url = `${baseURL}?${params}`;
 

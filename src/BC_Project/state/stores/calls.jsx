@@ -35,7 +35,8 @@ const useResultsStore = create((set, get) => ({
         try{
             set({isLoading: true, error: undefined});
             const response = await apiMealsOpts(params);
-            console.log(response)
+            set({searchResults: response?.hints});
+            //console.log(response?.hints)
         } catch (error){
             set({error: error});
         } finally{
