@@ -4,15 +4,15 @@ import apiMealsOpts from "../../api/MealsOptsAPI";
 
 
 const categoriesState = {
-    searchResults: [],
-    isLoading: false,
-    error: undefined,
+    searchResults1: [],
+    isLoading1: false,
+    error1: undefined,
 }
 
 const mealsState = {
-    searchResults: [],
-    isLoading: false,
-    error: undefined,
+    searchResults2: [],
+    isLoading2: false,
+    error2: undefined,
 }
 
 const useResultsStore = create((set, get) => ({
@@ -20,27 +20,26 @@ const useResultsStore = create((set, get) => ({
     ...categoriesState,    
     onSearchCategories: async () => {
         try{
-            set({isLoading: true, error: undefined});
+            set({isLoading1: true, error1: undefined});
             const response = await apiMealsCategories();
-            set({searchResults: response?.categories});
-        } catch (error){
-            set({error: error});
+            set({searchResults1: response?.categories});
+        } catch (error1){
+            set({error1: error1});
         } finally{
-            set({isLoading: false});
+            set({isLoading1: false});
         }
     },
 
     ...mealsState,
     onSearchMeals: async (params) => {
         try{
-            set({isLoading: true, error: undefined});
+            set({isLoading2: true, error2: undefined});
             const response = await apiMealsOpts(params);
-            set({searchResults: response?.hints});
-            //console.log(response?.hints)
-        } catch (error){
-            set({error: error});
+            set({searchResults2: response?.hints});
+        } catch (error2){
+            set({error2: error2});
         } finally{
-            set({isLoading: false});
+            set({isLoading2: false});
         }
     }
 }))

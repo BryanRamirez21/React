@@ -1,38 +1,14 @@
 import React from "react";
-import { useState, useRef, useEffect }  from 'react'
 import { useNavigate, useParams } from "react-router-dom";
 import MealSearchForm from "../components/MealSearchForm";
-import useResultsStore from '../state/stores/calls';
-import apiMealsCategories from "../api/MealsCategoriesAPI";
-
+import useMealSearch from "../hooks/useMealSearch";
+import ReturnButton from "../components/ReturnButton";
 
 const MealSearch = () => {
 
     const { id } = useParams();
     const navigate = useNavigate();
-
-    const onSearchMeals = useResultsStore((state) => state.onSearchMeals);
-
-    const [mealCategory, setMealCategory] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(undefined);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                setIsLoading(true);
-                setError(undefined);
-                setMealCategory([]);
-                const response = await apiMealsCategories();
-                setMealCategory(response?.categories?.[id-1]);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        fetchData();  
-    },[id]);
+    const {mealCategory, isLoading, error} = useMealSearch(id-1)
 
     const onSubmit = data => {
         data = {
@@ -47,18 +23,20 @@ const MealSearch = () => {
     };
 
     return (
-        <div className="">
-            {isLoading && <h6 className="mt-8">Cargando...</h6>}
-            {error && <h6 className="text-red">Ha ocurrido un error</h6>}
-            {!isLoading && mealCategory &&(
+        <div className=" h-full">
+            <ReturnButton isCat={false}/>
+            {isLoading && <h6 className="text-2xl md:text-3xl lg:text-5xl tracking-wider">Loading...</h6>}
+            {error && 
+                <div>
+                <h6 className='text-2xl md:text-3xl lg:text-5xl font-bold tracking-wider text-gray-500 mt-4'>Loading error</h6>
+                <p className="text-gray-500 mt-8 py-2 border-y-2 text-center">Please refresh the page or check your internet connection</p>  
+                </div>
+            }
+            {(!isLoading && !error) && mealCategory &&(
                 <>
-                    <img src={mealCategory.strCategoryThumb} alt={mealCategory.strCategory} className="w-40" />
-                    <p className="font-lato">{mealCategory.strCategory}</p>
+                    <MealSearchForm mealImg={mealCategory.strCategoryThumb} mealCatName={mealCategory.strCategory} onSubmit={onSubmit}/>
                 </>
             )}
-
-            <MealSearchForm onSubmit={onSubmit}/>
-
         </div>
     );
 };

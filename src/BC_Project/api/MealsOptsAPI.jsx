@@ -23,12 +23,8 @@ const apiMealsOpts = async (data) => {
 
     const url = `${baseURL}?${params}`;
 
-    try {
-        const response = await axios.get(url);
-        return response.data;
-    } catch (error) {
-        throw error;
-    }
+    const response = await axios.get(url);
+    return response.data;
 }
 
 export default apiMealsOpts;
