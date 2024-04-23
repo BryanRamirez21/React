@@ -16,7 +16,7 @@ import AppRouter from './BC_Project/routes'
 function App() {
   return (
       <div>
-        <Props_eg3 name={"bryan"} age={22}/>
+        <Props_eg3 name={"bryan"} age={21}/>
         
       </div>
   ) 
