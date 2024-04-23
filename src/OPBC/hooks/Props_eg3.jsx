@@ -7,3 +7,8 @@ export default function Props_eg3(props) {
     </div>
   )
 }
+
+Props_eg3.defaultProps = {
+  name: "menso",
+  age: 231
+}

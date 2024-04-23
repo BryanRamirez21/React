@@ -13,10 +13,13 @@ import ContactForm from './BOOTCAMP/usehookform/components/ContactForm'
 
 import AppRouter from './BC_Project/routes'
 
+
+import GifApp from './Gif-App/GifApp'
+
 function App() {
   return (
       <div>
-        <Props_eg3 name={"bryan"} age={21}/>
+        <GifApp/>
         
       </div>
   ) 
