@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { getGifs } from '../helpers/getGifs';
+import GifShowImg from './GifShowImg';
 /*
 const getGifs = async(category) => {
     const url = `https://api.giphy.com/v1/gifs/search?api_key=Oayd0nSxvf5uLU32QX3SSXoKv8rh3L2a&q=${category}&limit=20`;
@@ -33,7 +34,10 @@ export default function GifGrid({category}) {
         <div>
             <h1>{category}</h1>
             {images.map((img) => (
-                <li key={img.id}>{img.title}</li>
+                <li key={img.id}>
+                    {img.title}
+                    <GifShowImg img={img.img} />
+                </li>
             ))}
         </div>
     ) 
