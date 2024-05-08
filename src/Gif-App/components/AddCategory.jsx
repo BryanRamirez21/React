@@ -1,6 +1,6 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef} from 'react'
 
-export default function AddCategory({onNewCategory}) {
+export function AddCategory({onNewCategory}) {
 
     const category = useRef("");
 
@@ -13,9 +13,15 @@ export default function AddCategory({onNewCategory}) {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <input type='text' id='category' name='category' ref={category}/>
-            <button type='submit'>Add category</button>
+        <form onSubmit={onSubmit} className='flex flex-row'>
+            <input 
+                type='text' 
+                id='category' 
+                name='category' 
+                className='bg-white rounded-md border border-solid border-purple-800 text-black text-lg outline-none py-1 px-3 w-full mr-1' 
+                ref={category}
+            />
+            <button type='submit' className='w-56 bg-slate-600'>Add category</button>
         </form>
     )
 }

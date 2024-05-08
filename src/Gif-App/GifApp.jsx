@@ -1,6 +1,6 @@
-import React, {useState, useRef} from 'react';
-import AddCategory from './components/AddCategory';
-import GifGrid from './components/GifGrid';
+import React, {useState} from 'react';
+import {AddCategory, GifGrid} from './components';
+import 'tailwindcss/tailwind.css';
 
 export default function GifApp() {
 
@@ -9,19 +9,23 @@ export default function GifApp() {
     const onAddCategory = (newCategory) => {
         if(categories.includes(newCategory.trim().toLowerCase())) return;
 
-        setCategories([...categories, newCategory]);
+        setCategories([newCategory, ...categories]);
     }
 
     return (
         <div>
-            <h1>GifApp</h1>
-            <AddCategory 
-                onNewCategory={onAddCategory}
-            />
+            <div className='flex flex-row m-2 items-center'>
+                <h1 className='pb-4 mr-4'>GifApp</h1>
+                <AddCategory 
+                    onNewCategory={onAddCategory}
+                />
+            </div>
             
-            {categories.length > 0 && categories.map((element) => (
+            {
+                categories.length > 0 && categories.map((element) => (
                     <GifGrid key={element} category={element} />
-                ))}
+                ))
+            }
         </div>
     )
 }
