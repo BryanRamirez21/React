@@ -19,6 +19,7 @@ export function AddCategory({onNewCategory}) {
                 id='category' 
                 name='category' 
                 className='bg-white rounded-md border border-solid border-purple-800 text-black text-lg outline-none py-1 px-3 w-full mr-1' 
+                placeholder='Look up for some gifs...'
                 ref={category}
             />
             <button type='submit' className='w-56 bg-slate-600'>Add category</button>

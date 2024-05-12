@@ -14,7 +14,7 @@ export default function GifApp() {
 
     return (
         <div>
-            <div className='flex flex-row m-2 items-center'>
+            <div className='flex flex-row m-2 items-center justify-center'>
                 <h1 className='pb-4 mr-4'>GifApp</h1>
                 <AddCategory 
                     onNewCategory={onAddCategory}
