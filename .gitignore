@@ -23,8 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-/src/BC_Project/
+src/BC_Project/
 src/BOOTCAMP/
-src/components/
-src/hooks/
 src/OPBC/
