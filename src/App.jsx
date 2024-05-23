@@ -13,8 +13,9 @@ import './App.css'
 
 //import AppRouter from './BC_Project/routes'
 
+//import GifApp from './Gif-App/GifApp'
 
-import GifApp from './Gif-App/GifApp'
+import GifApp from './UdemyBC/04-Gif-App/GifApp'
 
 function App() {
   return (
