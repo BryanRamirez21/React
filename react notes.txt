@@ -1,0 +1,71 @@
+next.js
+
+recuerda que la logica de un componente es que es un tag, crear un componente es crear un tag que se renderiza en app.jsin
+
+la reactividad es una de las propiedades mas importantes de node ya que los hace reactivos, es decir, un componente se llama a si mismo pero ahora toma un valor diferente en una actualizacion.
+
+---------------------------------------
+
+npm create vite@latest
+
+para usarlo es en el file "main.jsx"
+
+----------------------------------------
+
+importante saber que es un syntethic event (aun no lo se)
+
+-----------
+
+CADA COMPONENTE SE EXPORTA/IMPORTA EN MAYUS
+
+------------------------
+
+hay un hook llamado forwardRef, que es para heredar props
+
+---------------------------
+
+
+
+useImperativeHandle, nos permite perzonalizar un value de una funcion del DOM (exponer funciones del dom para que otro elemento lo pueda usar)
+
+--------------------------------
+cada componente debe ser emebebido, es decir, cada componente que haga debe existir dentro 
+de un <div> o de un <>
+
+
+---------------------------
+
+IMPORTANTE, NO FUNCIONA HACER "let uno, dos = useRef()" TIENE QUE SER SEPARADO
+
+symbol, es un objeto que es unico (tal vez igual a un indice) en js
+
+PRACTICAR EL USECALLBACK 
+------------------------------
+
+en react no se usa mucho el try-catch, ya que hay varias formas de detectar errores, como los "boundaries"
+
+VISISTA LA PAGINA "USEHOOKS, TANSTACK QUERY"
+
+-----------------------------------
+
+lets install axios (some library to fetch...?)
+in our dir proyect, wew go to the console, npm i axios
+
+------------------------------------------
+there are some libraries (like react-router-dom (EG BOOTCAMP/zustand) ) are necesary to use on the main.jsx
+
+----------------------------------------------
+
+look up for "immer" (eg. bootcamp/zustand/state/stores/user-info.ts)
+immer has the persist func (also same eg above)
+-----------------------------------------------
+the use context main goal its to transffer info not needing events
+
+------------------------------------------------
+
+<input name='nombre' type='text' {...register("nombre", { required: "Este campo es obligatorio" })} />
+                {errors.nombre && <span>{errors.nombre.message}</span>}
+
+------------------------------------------------
+
+yup es una buena libreria para hacer validaciones
