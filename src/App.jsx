@@ -20,7 +20,7 @@ import GifApp from './UdemyBC/04-Gif-App/GifApp'
 function App() {
   return (
       <div>
-        <GifApp/>
+        <GifApp/> 
       </div>
   ) 
 }
