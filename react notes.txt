@@ -79,3 +79,5 @@ the " aria-label:'' " helps us for the test can get a tag by the func "getByRole
 --------------------------------------------------------
 
 you can use props to reverse send them (like send from a form to a father component)
+
+git rm -r --cached src/UdemyBC
