@@ -24,8 +24,6 @@ hay un hook llamado forwardRef, que es para heredar props
 
 ---------------------------
 
-
-
 useImperativeHandle, nos permite perzonalizar un value de una funcion del DOM (exponer funciones del dom para que otro elemento lo pueda usar)
 
 --------------------------------
@@ -69,3 +67,15 @@ the use context main goal its to transffer info not needing events
 ------------------------------------------------
 
 yup es una buena libreria para hacer validaciones
+
+-----------------------------------------------------
+
+para los test, cambie:
+"test": "vitest"
+y por alguna razon daba error: "type:module"
+
+the " aria-label:'' " helps us for the test can get a tag by the func "getByRole()"
+
+--------------------------------------------------------
+
+you can use props to reverse send them (like send from a form to a father component)
