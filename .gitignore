@@ -23,7 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-/src/BC_Project
-/src/BOOTCAMP
-/src/OPBC
-/src/UdemyBC
+#/src/BC_Project
+#/src/BOOTCAMP
+#/src/OPBC
+#/src/UdemyBC
