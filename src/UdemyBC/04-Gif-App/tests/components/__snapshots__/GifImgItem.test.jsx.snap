@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on GIfImgItem must match the sanpshot  1`] = `
+<div>
+  <div
+    class="flex align-center items-center rounded-sm bg-slate-800 shadow-slate-800 flex-col justify-center mb-5 mr-5 overflow-hidden"
+  >
+    <img
+      src="https://google.com/saitama.jpg"
+    />
+    <p>
+      saitama
+    </p>
+  </div>
+</div>
+`;
