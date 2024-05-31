@@ -88,3 +88,32 @@ eg: "a function w a callback === func(() => ({}))
     await waitFor(
             () => expect(result.current.images.length).toBeGreaterThan(0)
     );
+
+in order to modify a state, you have to modify all the prop of the state, not just use setState and set vals, you have to do it like this:
+ const [counter, setCounter] = useState({
+        counter1: 10,
+        counter2: 10,
+        counter3: 10,
+    });
+<button onClick={() => setCounter({
+        counter1: counter.counter1 + 1,
+        counter2: counter.counter2 + 1,
+        counter3: counter.counter3 + 1,
+            })}>+1</button>
+------------------------------------------------------------------------
+in order to change a state from an input value without calling the state prop name, go to src\UdemyBC\05-Hook-App\02-useEffect\SimpleForm.jsx
+(Seccion 9, cap 123)
+--------------------------------------------------------------------------
+in a async func, you must use the await until you use the data (ref. \UdemyBC\05-Hook-App\03-functionalComponents\hooks\useFetch.js)
+
+"data?.name" === "if we have 'data' look up for prop 'name'"
+
+deestructuring props:
+ 1- <PokemonCard id={data.id} name={data.name} sprites={data.sprites}/>
+ 2- export const PokemonCard = ({id, name, sprites = [] }) =>{}
+(ref. \UdemyBC\05-Hook-App\03-functionalComponents\MultipleCustomHooks.js)  
+-------------------------------------------------------------------------------
+we use the memo when we want to memorize a component with its params (not callbacks)
+ and we use useCallback when we want to memorize component callbacks (not params)
+ (ref. \UdemyBC\05-Hook-App\05-memos\memorize.js && CallBackHook.js) && (ref. \UdemyBC\05-Hook-App\06-tarea-memo\)
+ (secc 9 / ep 136)

@@ -15,12 +15,13 @@ import './App.css'
 
 //import GifApp from './Gif-App/GifApp'
 
-import GifApp from './UdemyBC/04-Gif-App/GifApp'
+//import GifApp from './UdemyBC/04-Gif-App/GifApp'
+import {HooksApp} from './UdemyBC/05-Hook-App/HooksApp'
 
 function App() {
   return (
       <div>
-        <GifApp/> 
+        <HooksApp/> 
       </div>
   ) 
 }
