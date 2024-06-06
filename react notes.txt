@@ -117,3 +117,29 @@ we use the memo when we want to memorize a component with its params (not callba
  and we use useCallback when we want to memorize component callbacks (not params)
  (ref. \UdemyBC\05-Hook-App\05-memos\memorize.js && CallBackHook.js) && (ref. \UdemyBC\05-Hook-App\06-tarea-memo\)
  (secc 9 / ep 136)
+ -------------------------------------------------------------------------------------------
+ different ways to call useCallback:
+
+ const toggleComplete = useCallback((id) => {
+    setTasks(tasks.map(task => (
+        task.id === id ? { ...task, completed: !task.completed } : task
+    )));
+},[]);
+
+const decrement = useCallback( 
+    () => {setCounter((prevCount) => prevCount - 1) },
+[])
+--------------------------------------------------------------------------------------
+useReducer its a pure function, the main goals of a pure function are:
+ - must not have side effects or call another functions..?
+ - must not have async task, always sync
+ - always must return an state
+ - must not call the "localStorage / sessionStorage" (are considered side effects)
+ - in order to modify the state, we must not need more than one action
+ 
+ A reducer function, always has 2 params: the state and an action (the part that will tell the reducer how its suppose to change the state)
+
+ its similar to declare a function, wich will recive an state and an action, the action will work like a switch param inside the reducer, depending on the action, will do an especific task 
+ (ref. \UdemyBC\05-Hook-App\07-useReducer\intro-reducerORG.js)
+
+You must not use push to push an state, NEVER, you must use the spread operator to push into an state

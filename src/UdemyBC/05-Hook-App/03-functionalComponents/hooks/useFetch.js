@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const localCache = {};
+const localSrg = {};
 
 export const useFetch = (url) => {
 
@@ -12,34 +12,34 @@ export const useFetch = (url) => {
     });
 
     useEffect(() => {
-        getFetch();
+        useFetch();
+        console.log(localSrg)
     },[url]);
 
     const setLoadingState = () => {
         setResp({
             data: null,
             isLoading: true,
-            hasError: null,
+            hasError: false,
             errorMessage: null
         });
     }
 
-    const getFetch = async() =>{
+    const useFetch = async() => {
+        const response = await fetch(url);
 
-        if(localCache[url]){
+        if(localSrg[url]){
             setResp({
-                data: localCache[url],
+                data: localSrg[url],
                 isLoading: false,
-                hasError: null,
+                hasError: false,
                 errorMessage: null
             });
             return;
         }
 
         setLoadingState();
-        const response = await fetch(url);
         await new Promise(resolve => setTimeout(resolve, 1500));
-
         if(!response.ok){
             setResp({
                 data: null,
@@ -47,7 +47,7 @@ export const useFetch = (url) => {
                 hasError: true,
                 errorMessage: {
                     code: response.status,
-                    message: response.statusText 
+                    message: response.statusText
                 }
             });
             return;
@@ -57,12 +57,12 @@ export const useFetch = (url) => {
         setResp({
             data,
             isLoading: false,
-            hasError: null,
+            hasError: false,
             errorMessage: null
         });
 
-        localCache[url] = data;
-    } 
+        localSrg[url] = data;
+    }
 
     return {
         data: resp.data,
