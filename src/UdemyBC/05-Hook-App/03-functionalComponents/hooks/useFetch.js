@@ -56,7 +56,6 @@ export const useFetch = (URL) => {
         });
 
         cache[URL] = data;
-
     } 
 
     return {
