@@ -27,6 +27,7 @@ export const useFetch = (URL) => {
             });
             return;
         }
+
         setResp({
             data:   null,
             isLoading: true,
