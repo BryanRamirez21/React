@@ -1,12 +1,14 @@
 import React from 'react'
 
-export const PokemonCard = ({id, name, imgs}) => {
+export const PokemonCard = ({id, name, sprites=[]}) => {
   return (
-    <div>
-        <h3>#{id} - {name}</h3>
-        {imgs.map((img) => (
-            <img key={img} src={img} />
-        ))}
-    </div>
+    <>
+      <h2>ID: {id} - {name}</h2>
+      {
+        sprites.map((sprite, id) => (
+          <img key={id} src={sprite} width={100} height={100}></img>
+        ))
+      }
+    </>
   )
 }

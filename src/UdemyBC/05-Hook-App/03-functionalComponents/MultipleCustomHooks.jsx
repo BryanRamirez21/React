@@ -1,25 +1,26 @@
 import React from 'react'
-import { useFetch } from './hooks/useFetch'
-import { LoadingMessage } from './components/LoadingMessage'
-import { useCounter } from '../01-useState/hooks/useCounter';
+import { useCounter } from './hooks/useCounter'
+import { useFetch } from './hooks/useFetch';
 import { PokemonCard } from './components/PokemonCard';
+import { LoadingMessage } from './components/LoadingMessage';
 
 export const MultipleCustomHooks = () => {
 
-    const {counter, increment, decrement} = useCounter();
+    const {counter, increase, decrease, reset} = useCounter(1);
     const {data, isLoading, hasError, errorMessage} = useFetch(`https://pokeapi.co/api/v2/pokemon/${counter}`);
 
     return (
-        <div>
-            <h1>Poke Info</h1>
-            <hr />
-            {isLoading 
+        <>
+            <h1>Pokemon info</h1>
+            <hr/>
+            {
+                isLoading 
                 ? <LoadingMessage />
-                : <PokemonCard id={counter} name={data.name} imgs={[data.sprites.front_default, data.sprites.back_default]}/>
+                : <PokemonCard id={data?.id} name={data?.name} sprites={[data?.sprites.front_default, data?.sprites.back_default, data?.sprites.front_shiny, data?.sprites.back_shiny]}/>
             }
-
-            <button onClick={decrement}>Previous</button>
-            <button onClick={increment}>Next</button>
-        </div>
+            <br></br>
+            <button onClick={decrease}>Previous</button>
+            <button onClick={increase}>Next</button>
+        </>
     )
 }

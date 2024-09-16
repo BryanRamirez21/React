@@ -1,73 +1,68 @@
 import React, { useEffect, useState } from 'react'
 
-const localSrg = {};
-
-export const useFetch = (url) => {
+export const useFetch = (URL) => {
 
     const [resp, setResp] = useState({
-        data: null,
+        data:   null,
         isLoading: true,
-        hasError: false,
-        errorMessage: null
+        hasError:  false,
+        error:  null,
     });
 
+    const [cache, setCache] = useState([]);
+
     useEffect(() => {
-        useFetch();
-        console.log(localSrg)
-    },[url]);
+        getFetch();
+    },[URL]);
 
-    const setLoadingState = () => {
-        setResp({
-            data: null,
-            isLoading: true,
-            hasError: false,
-            errorMessage: null
-        });
-    }
+    const getFetch = async() => {
+        const response = await fetch(URL);
 
-    const useFetch = async() => {
-        const response = await fetch(url);
-
-        if(localSrg[url]){
+        if(cache[URL]){
             setResp({
-                data: localSrg[url],
+                data: cache[URL],
                 isLoading: false,
-                hasError: false,
-                errorMessage: null
+                hasError:  false,
+                error:  null,
             });
             return;
         }
 
-        setLoadingState();
+        setResp({
+            data:   null,
+            isLoading: true,
+            hasError:  false,
+            error:  null,
+        });
+
         await new Promise(resolve => setTimeout(resolve, 1500));
         if(!response.ok){
             setResp({
-                data: null,
+                data:   null,
                 isLoading: false,
-                hasError: true,
-                errorMessage: {
-                    code: response.status,
-                    message: response.statusText
-                }
+                hasError:  true,
+                error:  null,
             });
             return;
         }
 
         const data = await response.json();
+
         setResp({
             data,
             isLoading: false,
-            hasError: false,
-            errorMessage: null
+            hasError:  false,
+            error:  null,
         });
 
-        localSrg[url] = data;
-    }
+        cache[URL] = data;
+
+    } 
 
     return {
         data: resp.data,
         isLoading: resp.isLoading,
-        hasError: resp.hasError,
-        errorMessage: resp.errorMessage
+        hasError:  resp.hasError,
+        error:  resp.error,
     }
 }
