@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { MultipleCustomHooks } from './UdemyBC/05-Hook-App/03-examples/MultipleCustomHooks'
+import { MultipleCustomHooks } from './UdemyBC/05-Hook-App/03-functionalComponents/MultipleCustomHooks'
 
 //import AppRouter from './BOOTCAMP/zustand_recipies/routes'
 //import State_eg1 from           './OPBC/hooks/State_eg1'

@@ -82,6 +82,10 @@ you can use props to reverse send them (like send from a form to a father compon
 
 git rm -r --cached src/UdemyBC
 
+git add .
+commit 
+push
+
 ------------------------------------------------------------
 when you say "callback" you mean: "() => ({}) / ()"
 eg: "a function w a callback === func(() => ({}))
