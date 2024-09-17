@@ -143,3 +143,7 @@ useReducer its a pure function, the main goals of a pure function are:
  (ref. \UdemyBC\05-Hook-App\07-useReducer\intro-reducerORG.js)
 
 You must not use push to push an state, NEVER, you must use the spread operator to push into an state
+------------------------------------------------------------------------------------------------
+propiedades computarizadas: UdemyBC\05-Hook-App\02-useEffect\SimpleForm - onInputChange func
+-----------------------------------------------
+avoid memory leaks: UdemyBC\05-Hook-App\02-useEffect\Message.jsx - useEffect

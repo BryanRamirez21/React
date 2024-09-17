@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { Message } from './Message';
+import { useForm } from './hooks/useForm';
 
-export const SimpleForm = () => {
+export const FormWithCustomHook = () => {
 
+    /*
     const [formState, setFormState] = useState({
-        username: "bryan",
-        email: "bryan@mail.com"
+        username: "",
+        email: "",
+        password: ""
     });
+    
 
-    const {username, email} = formState;
+    const {username, email, password} = formState;
 
     const onInputChange = ({target}) => {
         const {name, value} = target
@@ -18,9 +22,19 @@ export const SimpleForm = () => {
         })
     }
 
+    */
+
+    const {formState, onInputChange, onReset} = useForm({
+        username: "",
+        email: "",
+        password: ""
+    });
+    const {username, email, password} = formState;
+
+
     return (
         <>
-            <h1>Simple Form</h1>
+            <h1>Form With CustomHook</h1>
             <hr />
             <input 
                 type='text' 
@@ -38,11 +52,20 @@ export const SimpleForm = () => {
                 value={email}
                 onChange={onInputChange}
             />
+            <input 
+                type='password' 
+                className='form-control mt-2'
+                placeholder='password'
+                name='password'
+                value={password}
+                onChange={onInputChange}
+            />
 
+            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold' onClick={onReset}>Borrar</button>
             
             {
                 username === "bryan" && <Message />
             }
         </>
-    )
+    ) 
 }

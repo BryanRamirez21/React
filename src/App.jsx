@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { MultipleCustomHooks } from './UdemyBC/05-Hook-App/03-examples/MultipleCustomHooks'
 
 //import AppRouter from './BOOTCAMP/zustand_recipies/routes'
 //import State_eg1 from           './OPBC/hooks/State_eg1'
@@ -16,12 +17,11 @@ import './App.css'
 //import GifApp from './Gif-App/GifApp'
 
 //import GifApp from './UdemyBC/04-Gif-App/GifApp'
-import {HooksApp} from './UdemyBC/05-Hook-App/HooksApp'
 
 function App() {
   return (
       <div>
-        <HooksApp/> 
+        <MultipleCustomHooks/> 
       </div>
   ) 
 }

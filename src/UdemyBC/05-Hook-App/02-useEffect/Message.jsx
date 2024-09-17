@@ -1,38 +1,28 @@
-import React, { useEffect } from 'react'
-//Seccion 9, cap 123
+import React, { useEffect, useState } from 'react'
+
 export const Message = () => {
 
-    useEffect(() => {
+    const [coords, setCoords] = useState({x:0, y:0})
 
-        const onMouseMove = () => {
-            console.log(":)")
+    useEffect(() => {
+        const onMouseMove = ({x,y}) => {
+            setCoords({x,y})
         }
 
-        window.addEventListener("mousemove", onMouseMove);
+        //here we create a component that mounts every time we move the mouse
+        window.addEventListener("mousemove", onMouseMove)
 
-        /*
-            the next funciton, wont work to close it in the return, because if we do a refference to the same function (after the "mousemove")
-             a new space in memory will be created:
-
-             window.addEventListener("mousemove", (e) => {
-                console.log(e);
-            })
-            return(
-                window.removeEventListener("mousemove", (e) => {
-                    console.log(e);
-                })
-            )
-        */
-
-        return() => {
-            window.removeEventListener("mousemove", onMouseMove) 
+        return () => {
+            //in order to dismount the component (so we avoid to have the same component mounted multiple times), we remove it on the return
+            window.removeEventListener("mousemove", onMouseMove)
         }
     }, [])
     
 
     return (
-        <div>
-            <h3>User already exists</h3>
-        </div>
+        <>
+            <h3>User already exits</h3>
+            {JSON.stringify(coords)}
+        </>
     )
 }
