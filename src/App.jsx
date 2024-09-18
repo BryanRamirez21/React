@@ -2,26 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { MultipleCustomHooks } from './UdemyBC/05-Hook-App/03-functionalComponents/MultipleCustomHooks'
+import { MemoHook } from './UdemyBC/05-Hook-App/06-memos/MemoHook'
 
-//import AppRouter from './BOOTCAMP/zustand_recipies/routes'
-//import State_eg1 from           './OPBC/hooks/State_eg1'
-//import ComponenteContexto from  './OPBC/hooks/ContextHook_eg2'
-//import Props_eg3 from           './OPBC/hooks/Props_eg3'
-
-//import FormHook from    './BOOTCAMP/usehookform/components/Form'
-//import ContactForm from './BOOTCAMP/usehookform/components/ContactForm'
-
-//import AppRouter from './BC_Project/routes'
-
-//import GifApp from './Gif-App/GifApp'
-
-//import GifApp from './UdemyBC/04-Gif-App/GifApp'
 
 function App() {
   return (
       <div>
-        <MultipleCustomHooks/> 
+        <MemoHook/> 
       </div>
   ) 
 }

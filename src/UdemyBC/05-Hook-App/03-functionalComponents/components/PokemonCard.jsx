@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 
 export const PokemonCard = ({id, name, sprites=[]}) => {
+
   return (
     <>
       <h2>ID: {id} - {name}</h2>
