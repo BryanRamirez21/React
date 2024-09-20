@@ -78,8 +78,6 @@ the " aria-label:'' " helps us for the test can get a tag by the func "getByRole
 
 --------------------------------------------------------
 
-you can use props to reverse send them (like send from a form to a father component)
-
 git rm -r --cached src/UdemyBC
 
 git add .
@@ -151,3 +149,16 @@ You must not use push to push an state, NEVER, you must use the spread operator 
 propiedades computarizadas: UdemyBC\05-Hook-App\02-useEffect\SimpleForm - onInputChange func
 -----------------------------------------------
 avoid memory leaks: UdemyBC\05-Hook-App\02-useEffect\Message.jsx - useEffect
+--------------------------------------------------------------------------------------
+useEffect: Se ejecuta después de que React haya pintado la pantalla. Esto significa que cualquier código en useEffect se ejecutará una vez que el DOM esté actualizado y visible 
+para el usuario. Es ideal para efectos que no afectan el diseño de la página, como solicitudes de datos, suscripciones o cambios que no necesitan bloquear el renderizado visual.
+
+useLayoutEffect: Se ejecuta antes de que el navegador haya pintado la pantalla, pero después de que React haya actualizado el DOM. Este hook bloquea la pintura hasta que haya 
+completado su ejecución. Se utiliza cuando necesitas medir o manipular el DOM de manera inmediata, antes de que los usuarios vean el resultado y deberia usarse siempre que se quiera 
+interactuar directamente con el DOM.
+--------------------------------------------------------------------------------------
+you can use props to reverse send them (like send from a form to a father component)
+and if you are using form, you should reverse send the values (if nedded in the case form its a child component)
+"UdemyBC\05-Hook-App\08-reducer\components\TodoAdd.jsx"
+---------------------------
+useReduce can have an INIT
