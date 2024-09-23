@@ -31,6 +31,7 @@ export const TodoApp = () => {
             load: todo
         };
         dispatch(action);
+        console.log(action)
     }
 
     const handleDel = (id) => {

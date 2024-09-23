@@ -3,12 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { TodoApp } from './UdemyBC/05-Hook-App/08-reducer/todoApp/TodoApp'
+import { CountersApp } from './UdemyBC/05-Hook-App/08-reducer/multipleCounter/CountersApp'
 
 
 function App() {
   return (
       <div>
-        <TodoApp/> 
+        <CountersApp/> 
       </div>
   ) 
 }
