@@ -1,24 +1,22 @@
 import React from 'react'
 
-export const Counters = ({counters, operations}) => {
+export const Counters = ({counters, onAction}) => {
     return (
-        <>
+        <div className='d-flex justify-content-center flex-column'>
             {
-                counters.map((counter, id) => (
-                    <div key={counter.id} className='d-flex flex-col justify-center align-items-center'>
-                        <div className='d-flex flex-row justify-center align-items-center gap-2'>
-                            <span>Counter {id}: {counter.value}</span>
-                            <button onClick={() => operations(counter.id, "increment")}>+</button>
-                            <button onClick={() => operations(counter.id, "decrement")}>-</button>
+                counters.map((counter, index) => (
+                    <div key={counter.id}>
+                        <div className='d-flex flex-row justify-content-center align-items-center my-2'>
+                            <span>Counter {index + 1}: {counter.value}</span>
+                            <button onClick={() => onAction(counter.id, 1)} className='mx-3'> + </button>
+                            <button onClick={() => onAction(counter.id, 2)} className=''> - </button>
+                            
                         </div>
-                        <div>
-                            <button onClick={() => operations(counter.id, "reset")} className='mr-4'>Reset</button>
-                            <button onClick={() => operations(counter.id, "delete")}>Delete</button>
-                        </div>                        
+                        <button onClick={() => onAction(counter.id, 3)}>Reset</button>
+                        <button onClick={() => onAction(counter.id, 4)}>Delete</button>
                     </div>
                 ))
             }
-            
-        </>
+        </div>
     )
 }
