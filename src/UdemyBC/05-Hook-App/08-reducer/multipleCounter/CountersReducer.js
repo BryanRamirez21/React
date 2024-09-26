@@ -7,18 +7,16 @@ export const CountersReducer = (initalState, action) => {
 
         case "incCounter":
             return initalState.map(counter => 
-                (counter.id === action.load) ? { ...counter, value: counter.value + 1 } : counter
+                (counter.id === action.load) ? {...counter, value: counter.value + 1 } : counter
             );
 
         case "decCounter":
             return initalState.map((counter) => (
-                (counter.id === action.load) ? {...counter, value: counter.value - 1} : counter
+                {...counter, value: counter.value - 1}
             ))
 
         case "resetCounter":
-            return initalState.map((counter) => (
-                (counter.id === action.load) ? {...counter, value: 0} : counter
-            ));
+            return initalState.map((counter) => ({...counter, value:0}));
 
         case "delCounter":
             return initalState.filter(counter => counter.id !== action.load);
