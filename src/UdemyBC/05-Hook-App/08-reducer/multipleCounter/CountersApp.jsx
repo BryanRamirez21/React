@@ -4,67 +4,43 @@ import { CountersReducer } from './CountersReducer';
 
 export const CountersApp = () => {
 
-    const initalState = [];
+    const initialState = [];
+    const [counters, dispatch] = useReducer(CountersReducer, initialState);
 
-    const [counters, dispatch] = useReducer(CountersReducer, initalState);
-
-
-    const addCounter = () => {
-        const newCounter = {
-            id: new Date().getTime(),
-            value: 0,
-        };
-
+    const handleNewCounter = () => {
         const action = {
             type: "AddCounter",
-            load: newCounter
+            load: {id:new Date().getTime(), value:0}
         };
         dispatch(action);
     }
 
-    const handleOperations = (id, operation) => {
-        let action = {};
-        switch (operation) {
-            case "increment":
-                action = {
-                    type: "incCounter",
-                    load: id
-                };
+    const handleActions = (id, action) => {
+        var actionName = "";
+        switch(action){
+            case 1: actionName = "IncCounter";
             break;
-            case "decrement":
-                action = {
-                    type: "decCounter",
-                    load: id
-                };
+            case 2: actionName = "DecCounter";
             break;
-            case "reset":
-                action = {
-                    type: "resetCounter",
-                    load: id
-                };
+            case 3: actionName = "ResetCounter";
             break;
-            case "delete":
-                action = {
-                    type: "delCounter",
-                    load: id
-                };
+            case 4: actionName = "DelCounter";
             break;
-        
-            default:
-            break;
-            
         }
-        dispatch(action);
+        const action2 = {
+            type: actionName,
+            load: id
+        };
+
+        dispatch(action2)
     }
 
     return (
         <>
-            <h1>Multiple Countes with useReducer</h1>
+            <h1>Multiple CountersApp - useReducer</h1>
             <hr />
-
-            <Counters counters={counters} operations={handleOperations}/>
-
-            <button onClick={addCounter}>Add Counter</button>
+            <Counters counters={counters} onAction={handleActions}/>
+            <button onClick={handleNewCounter} className='btn btn-primary mt-4'>Add new Counter</button>
         </>
     )
 }

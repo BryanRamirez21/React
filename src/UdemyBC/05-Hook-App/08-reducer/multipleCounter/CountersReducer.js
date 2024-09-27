@@ -1,27 +1,26 @@
 import React from 'react'
 
-export const CountersReducer = (initalState, action) => {
-    switch (action.type) {
+export const CountersReducer = (initialState, action) => {
+    switch(action.type){
         case "AddCounter":
-            return [...initalState, action.load];
-
-        case "incCounter":
-            return initalState.map(counter => 
-                (counter.id === action.load) ? {...counter, value: counter.value + 1 } : counter
+            return [...initialState, action.load];
+            
+        case "IncCounter":
+            return initialState.map((counter) => 
+                (counter.id === action.load) ? {...counter, value: counter.value + 1} : counter
             );
 
-        case "decCounter":
-            return initalState.map((counter) => (
-                {...counter, value: counter.value - 1}
-            ))
+        case "DecCounter":
+            return initialState.map((counter) => (
+                (counter.id === action.load) ? {...counter, value: counter.value - 1} : counter
+            ));
 
-        case "resetCounter":
-            return initalState.map((counter) => ({...counter, value:0}));
+        case "ResetCounter":
+            return initialState.map((counter) => (
+                (counter.id === action.load) ? {...counter, value: 0} : counter
+            ));
 
-        case "delCounter":
-            return initalState.filter(counter => counter.id !== action.load);
-    
-        default:
-        break;
+        case "DelCounter":
+            return initialState.filter((counter) => counter.id !== action.load);
     }
 }
