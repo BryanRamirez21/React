@@ -11,6 +11,7 @@ export const ToDoReducer = (initialState, action) => {
             return initialState.filter(todo => todo.id !== action.load);
 
         case "TODO ToggleToDo":
+            //! i dont know how to return this
             return initialState.map((todo) => {
                 if(todo.id === action.load){
                     return {...todo, done: !todo.done}

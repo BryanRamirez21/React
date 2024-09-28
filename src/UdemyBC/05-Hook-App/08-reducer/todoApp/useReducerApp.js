@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react'
-import { ToDoReducer } from '../ToDoReducer';
+import { ToDoReducer } from './ToDoReducer';
 
 export const useReducerApp = () => {
 
@@ -38,11 +38,11 @@ export const useReducerApp = () => {
         dispatch(action);
     }
 
-    const handleToggleTodo = (id) => {
+    const handleToggle = (id) => {
         const action = {
             type: "TODO ToggleToDo",
             load: id
-        }
+        };
         dispatch(action);
     }
 
@@ -50,6 +50,9 @@ export const useReducerApp = () => {
         todos,
         handleAddTodo,
         handleDel,
-        handleToggleTodo
+        handleToggle,
+        todosCount: todos.length,
+        //!use of filter to count
+        todosPending: todos.filter(todo => !todo.done).length
     };
 }
