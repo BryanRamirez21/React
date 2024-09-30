@@ -161,4 +161,30 @@ you can use props to reverse send them (like send from a form to a father compon
 and if you are using form, you should reverse send the values (if nedded in the case form its a child component)
 "UdemyBC\05-Hook-App\08-reducer\components\TodoAdd.jsx"
 ---------------------------
-useReduce can have an INIT
+In localStorage you only can save plain text, so you need to change it to json if you going to use it in code
+"\UdemyBC\localStorage\useLocalStorage.js"
+----------------------------------
+the: "browserRouter" es un higher order component (HOC) its a normal component BUT it recives more components inside, like: 
+"
+    <c1>
+        <c2>
+            <c3>...
+        </c2>
+    </c1>
+"
+
+the most important hooks on useRrouter are: 
+    Routes, Route{path, element}, link{to, } / navlink
+
+you should always close de "<Route >" in the same, UNLESS...
+
+the simbol on the path prop: "/*", redirects the route if its incorrect or misspelled: "<Route path="/*" element={<page404/>}" BUT ITS NOT THAT USED,
+    because the URL stays on the misspelled URL, instead, we use the router hook: "Navigate"
+    <Route path="/*" element={<Navigate to="/about"/>} />
+
+The equivalent of this <a>, its the <Link>, we use it because the <a> refreshes the entery page/compo, its even recognized in the DOM as the <a> (and for some reason the css also 
+    does recognize the <Link> as a <a>)
+
+another HOC its the <NavLink></NavLink>, its a different version of <Link> but 
+    THE ONLY DIFFERENCE, its that the <NavLink> can recive the classname={"nav-link: active"}, 
+    because its designed to work like the <nav> from html, thats the only thing it does, 

@@ -2,14 +2,14 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { TodoApp } from './UdemyBC/05-Hook-App/08-reducer/todoApp/TodoApp'
-import { CountersApp } from './UdemyBC/05-Hook-App/08-reducer/multipleCounter/CountersApp'
+import { MainApp } from './UdemyBC/05-Hook-App/09-useContext/MainApp'
+import { LocalStorageIndex } from './UdemyBC/localStorage/LocalStorageIndex'
 
 
 function App() {
   return (
       <div>
-        <CountersApp/> 
+        <LocalStorageIndex/> 
       </div>
   ) 
 }
