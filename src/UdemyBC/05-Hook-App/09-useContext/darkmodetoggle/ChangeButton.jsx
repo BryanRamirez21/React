@@ -3,12 +3,23 @@ import { ThemeContext } from './ThemeContext';
 
 export const ChangeButton = () => {
 
-    const {darkmode, setDarkmode} = useContext(ThemeContext);
+    //! here IT IS useContext
+    //! i used the provider inside the useContext, its the context file
+    const {darkmode, handleChangeMode} = useContext(ThemeContext);
 
     return (
         <>
-            <h2> {darkmode ? "[ON]" : "[OFF]"}</h2>
-           <button className='btn btn-secondary' onClick={() => setDarkmode(!darkmode)}>Change</button> 
+            <div style={{
+                backgroundColor: darkmode ? '#fff' : '#333',
+                color: darkmode ? '#000' : '#fff',
+                height: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}>
+                <button onClick={handleChangeMode}>DarkMode {darkmode ? "[ON]" : "[OFF]"}</button>
+            </div>
         </>
     )
 }
