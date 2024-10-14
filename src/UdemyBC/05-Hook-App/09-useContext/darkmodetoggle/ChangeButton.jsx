@@ -5,6 +5,7 @@ export const ChangeButton = () => {
 
     //! here IT IS useContext
     //! i used the provider inside the useContext, its the context file
+    //! here goes the context, not provider
     const {darkmode, handleChangeMode} = useContext(ThemeContext);
 
     return (
@@ -18,7 +19,7 @@ export const ChangeButton = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
             }}>
-                <button onClick={handleChangeMode}>DarkMode {darkmode ? "[ON]" : "[OFF]"}</button>
+                <button onClick={handleChangeMode}>DarkMode {!darkmode ? "[ON]" : "[OFF]"}</button>
             </div>
         </>
     )

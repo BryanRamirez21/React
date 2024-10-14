@@ -2,7 +2,7 @@
   "name": "practices",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "vitest",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,10 +11,10 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.24.5",
-    "@babel/preset-react": "^7.24.1",
+    "@babel/preset-env": "^7.25.8",
+    "@babel/preset-react": "^7.25.7",
     "@hookform/resolvers": "^3.3.4",
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^29.5.13",
     "axios": "^1.6.7",
     "babel-jest": "^29.7.0",
     "immer": "^10.0.3",

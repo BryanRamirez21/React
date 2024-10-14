@@ -4,6 +4,7 @@ import { ChangeButton } from './ChangeButton'
 
 export const MainTheme = () => {
     return (
+        //! Here goes the provider
         <ThemeProvider>
             <h1>DarkMode</h1>
             <ChangeButton/>
