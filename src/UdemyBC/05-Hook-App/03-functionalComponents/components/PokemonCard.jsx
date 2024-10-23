@@ -1,4 +1,3 @@
-import React, { useLayoutEffect, useRef } from 'react'
 
 export const PokemonCard = ({id, name, sprites=[]}) => {
 

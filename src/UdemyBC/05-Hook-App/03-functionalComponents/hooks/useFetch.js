@@ -16,6 +16,8 @@ export const useFetch = (URL) => {
     },[URL]);
 
     const getFetch = async() => {
+
+        //* check the notes to remember how to set a fetch
         const response = await fetch(URL);
 
         if(cache[URL]){

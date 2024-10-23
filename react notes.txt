@@ -188,3 +188,13 @@ The equivalent of this <a>, its the <Link>, we use it because the <a> refreshes 
 another HOC its the <NavLink></NavLink>, its a different version of <Link> but 
     THE ONLY DIFFERENCE, its that the <NavLink> can recive the classname={"nav-link: active"}, 
     because its designed to work like the <nav> from html, thats the only thing it does, 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+the process to fetch data its:
+    1- call the url to fetch WITH ASYNC/AWAIT
+        const response = await fetch(URL);
+
+    2- response always has an "ok" status, so we can use that to evaluate if there error
+        if(!response.ok)...
+
+    3- finally, wer put the response into JSON so we can use it
+        const data = await response.json(); 
