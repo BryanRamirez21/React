@@ -9,6 +9,17 @@ export const useReducerApp = () => {
         return JSON.parse(localStorage.getItem('todos')) || []
     }
 
+    //! for an initalVal, theres no need to stablish props if we are going to send them somewhere:
+    /*
+    const [initTodos, setInitTodos] = useState([{
+        id:0,
+        task:"",
+        done:false
+    }]);
+    */
+   //* im supossed to do this
+
+
     //! didnt remember what props was in here:
     //* the "todos" its the state that will save the data(?)
     //* the "dispacth" its the function that will change the "todos"

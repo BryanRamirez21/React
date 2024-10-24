@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 
+//! i forgot to deestructure the function
 export const TodoAdd = ({newTodo}) => {
 
     const inputRef = useRef();

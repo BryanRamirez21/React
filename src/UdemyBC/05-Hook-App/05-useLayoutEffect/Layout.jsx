@@ -13,8 +13,8 @@ export const Layout = () => {
     }, []);
 
     return (
-    <div ref={elementRef} style={{ width: '100px', height: '100px', backgroundColor: 'lightblue' }}>
-        Width: {size.width}px, Height: {size.height}px
-    </div>
+        <div ref={elementRef} style={{ width: '100px', height: '100px', backgroundColor: 'lightblue' }}>
+            Width: {size.width}px, Height: {size.height}px
+        </div>
     );
 }

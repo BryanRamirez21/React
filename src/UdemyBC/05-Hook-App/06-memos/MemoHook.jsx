@@ -20,7 +20,7 @@ export const MemoHook = () => {
             <h1>Counter <small>{counter}</small></h1>
             <hr />
             <h4>{messageMemorize}</h4>
-            <button onClick={increase}>+1</button>
+            <button onClick={() => increase(50)}>+1</button>
             <button onClick={() => setShow(!show)}>Show / Hide {JSON.stringify(show)}</button>
         </>
     )
