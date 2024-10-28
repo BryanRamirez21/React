@@ -1,56 +1,66 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, createContext} from 'react'
 
-//we start a state that will take data from a parent
-const miContexto = React.createContext(null);
+//* 1: create context
+//* 2: create provider and set functions/params to pass
+//* 3: pass them
 
-const ContextHook_eg2 = () => {
-    //we start a state that will take data from a parent
-    const state = useContext(miContexto);
+export const ComponentContext = createContext();
+
+
+//*1
+const ComponentProvider = ({children}) => {
+    const [dataSession, setDataSession] = useState({
+        token:4321,
+        session:9876
+    });
+
     return (
-        <div>
-            <h1>El token es: {state.token}</h1>
-            <Componente2 />
-        </div>
-    )
-}
-
-
-
-const Componente2 = () => {
-    const state = useContext(miContexto);
-    return(
-        <div>
-            <h2>La sesion es: {state.sesion}</h2>
-        </div>
+    <ComponentContext.Provider value={{dataSession, setDataSession}}>
+        {children}
+    </ComponentContext.Provider>
     );
 }
 
 
-
-const ComponenteContexto = () => {
-    const initialState = {
-        token: 12345,
-        sesion: 98765
-    };
-
-    const [sessionData, setSessionData] = useState(initialState);
-
-    function actualizarSession(){
-        setSessionData({
-            token: 1111,
-            sesion: 2222 
-        });
+//*2
+const ComponentReciver1 = () => {
+    const {dataSession} = useContext(ComponentContext);
+    return (
+        <>
+            <h1>El token es: {dataSession.token}</h1>
+        </>
+    );
+}
+const ComponentReciver2 = () => {
+    const {dataSession, setDataSession} = useContext(ComponentContext);
+    const changeData= () => {
+        const newData = {
+            token:111,
+            session:222
+        }
+        setDataSession(newData)
     }
     return(
-        <miContexto.Provider value={sessionData}>
-            {/* todo lo que esta dentro puede leer los datos de sessionData */}
-            {/* si se actualiza aqui, los demás componentes tambien lo haran */}
-            <ContextHook_eg2></ContextHook_eg2>
-            <button onClick={actualizarSession}>Update session</button>
-        </miContexto.Provider>
+        <>
+            <h2>la sesion es: {dataSession.session}</h2>
+            <button onClick={changeData}>Change data</button>
+        </>
     );
 }
 
 
+
+//*3
+const ComponenteContexto = () => {
+
+
+    return(
+            <ComponentProvider>
+                <ComponentReciver1 />
+                <ComponentReciver2 />
+                
+            </ComponentProvider>
+    );
+}
 
 export default ComponenteContexto;
