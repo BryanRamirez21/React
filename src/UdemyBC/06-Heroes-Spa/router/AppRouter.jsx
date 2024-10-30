@@ -1,20 +1,15 @@
-import React from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { DCPage, MarvelPage } from '../heroes/index'
-import { LoginPage } from '../../05-Hook-App/09-useContext/loginNav/LoginPage'
-import {Navbar} from '../ui/index'
+import { Route, Routes } from 'react-router-dom'
+import { HeoresRoutes } from '../heroes/routes/HeoresRoutes'
+import { LoginPage } from '../auth/pages/LoginPage'
 
 export const AppRouter = () => {
     return (
     <>
-        <Navbar />
-
         <Routes>
-            <Route path='/marvel' element={<MarvelPage />} />
-            <Route path='/dc' element={<DCPage />} />
 
             <Route path='/login' element={<LoginPage />} />
-            <Route path='/' element={<Navigate to="/marvel" />} />
+            {/* any route thats not the login, goes trough this component */}
+            <Route path='/*' element={<HeoresRoutes />} />
         </Routes>
     </>
     )
