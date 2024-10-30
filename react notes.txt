@@ -198,3 +198,6 @@ the process to fetch data its:
 
     3- finally, wer put the response into JSON so we can use it
         const data = await response.json(); 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+useNavigate() -> UdemyBC\06-Heroes-Spa\ui\components\NavBar.jsx
+useful function to navigate with a custom button
