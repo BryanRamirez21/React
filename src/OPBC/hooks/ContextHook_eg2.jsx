@@ -3,7 +3,7 @@ import React, {useState, useContext, createContext} from 'react'
 //* 1: create context
 //* 2: create provider and set functions/params to pass
 //* 3: pass them
-
+ 
 export const ComponentContext = createContext();
 
 
