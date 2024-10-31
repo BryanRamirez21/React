@@ -17,7 +17,7 @@ export const HeroCard = ({hero}) => {
     const heroImg = `/assets/udemyBC/06-heoresSpa/heroes/${id}.jpg`;
         
     return (
-        <div className='col '>
+        <div className='col animate__animated animate__fadeIn'>
             <div className='card'>
                 <div className="row no-gutters">
                     <div className="col-4">

@@ -9,7 +9,7 @@ import { MultipleCustomHooks } from './UdemyBC/05-Hook-App/03-functionalComponen
 ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
     <BrowserRouter>
-      <MultipleCustomHooks />
+      <HeroesApp />
     </BrowserRouter>
     
   //</React.StrictMode>,

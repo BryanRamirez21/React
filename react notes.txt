@@ -200,3 +200,5 @@ the process to fetch data its:
         const data = await response.json(); 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
+usememor para memorizar valores
+useCallback para memorizar funciones

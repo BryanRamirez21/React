@@ -1,4 +1,3 @@
-
 export const PokemonCard = ({id, name, sprites=[]}) => {
 
   return (

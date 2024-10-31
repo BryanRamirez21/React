@@ -1,10 +1,14 @@
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { getHeroById } from '../helpers';
+import { useMemo } from 'react';
 
 export const Hero = () => {
 
     const {heroId} = useParams();
-    const hero = getHeroById(heroId);
+    
+    //* va a disparar este callback cada vez que sus dependencias cambien
+    const hero = useMemo(() => getHeroById(heroId), [heroId]);
+
     if(!hero){
         return <Navigate to={'/marvel'} />
     }
@@ -15,9 +19,13 @@ export const Hero = () => {
     }
 
     return (
-        <div className='row mt-5'>
-            <div className='col-4'>
-                <img src={`/assets/udemyBC/06-heoresSpa/heroes/${hero.id}.jpg`} className='img-thubnail' alt={hero.superhero}></img>
+        <div className='row mt-5 animate__animated animate__fadeInLeft'>
+            <div className='col-4 '>
+                <img 
+                    src={`/assets/udemyBC/06-heoresSpa/heroes/${hero.id}.jpg`} 
+                    className='img-thubnail' 
+                    alt={hero.superhero}>
+                </img>
             </div>
             <div className="col-8">
                 <h3>{hero.superhero}</h3>
