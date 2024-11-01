@@ -208,3 +208,4 @@ useCallback para memorizar funciones
 useLocation = read the query parameters
 querytstring package, can extract info from "search"(useLocation UdemyBC\06-Heroes-Spa\heroes\pages\Search.jsx)
     object
+    on the objet props, we will always get strings
