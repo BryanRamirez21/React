@@ -202,3 +202,9 @@ the process to fetch data its:
 
 usememor para memorizar valores
 useCallback para memorizar funciones
+
+
+
+useLocation = read the query parameters
+querytstring package, can extract info from "search"(useLocation UdemyBC\06-Heroes-Spa\heroes\pages\Search.jsx)
+    object
