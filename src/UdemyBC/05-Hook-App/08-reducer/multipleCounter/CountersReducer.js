@@ -1,5 +1,6 @@
 import React from 'react'
 
+//! es "payload", no load o typeload
 export const CountersReducer = (initialState, action) => {
     switch(action.type){
         case "AddCounter":

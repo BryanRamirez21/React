@@ -6,10 +6,10 @@ export const Layout = () => {
     const elementRef = useRef(null);
 
     useLayoutEffect(() => {
-    if (elementRef.current) {
-        const { offsetWidth, offsetHeight } = elementRef.current;
-        setSize({ width: offsetWidth, height: offsetHeight });
-    }
+        if (elementRef.current) {
+            const { offsetWidth, offsetHeight } = elementRef.current;
+            setSize({ width: offsetWidth, height: offsetHeight });
+        }
     }, []);
 
     return (

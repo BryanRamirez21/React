@@ -37,12 +37,6 @@ export const Search = () => {
                     No "{q}" found
                 </div>
             );
-        }else if(heroes.length > 0){
-            return (
-                heroes.map(hero => (
-                    <HeroCard key={hero.id} hero={hero} />
-                ))
-            )
         }
     }
 
@@ -71,6 +65,11 @@ export const Search = () => {
                     <h4>Resutls</h4>
                     <hr />
                     <ResultColComponent />
+                    {
+                        heroes.map(hero => (
+                            <HeroCard key={hero.id} hero={hero} />
+                        ))
+                    }
                 </div>
             </div>
             
