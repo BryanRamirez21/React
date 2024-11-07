@@ -1,8 +1,11 @@
-import React, {memo} from 'react'
+import React, { memo } from 'react'
 
-export const Small = memo(({value}) => {
-    console.log("here i am")
+//! "memo" will only
+export const Small = ({counter}) => {
+
+    console.log("here again")
+
     return (
-        <small>{value}</small>
+        <div>{counter}</div>
     )
-})
+}
