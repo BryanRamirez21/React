@@ -1,27 +1,35 @@
 import React, { useMemo, useState } from 'react'
-import { useCounter } from '../hooks/useCounter'
 
-const heavyStuff = (iterationNumber = 100) => {
-    for(let i=0; i<iterationNumber; i++){
-        console.log("ahi vamos");
+const heavyStuff = (num) => {
+    for(let x = 0; x<=num; x++){
+        console.log("rendered");
     }
-    return `${iterationNumber} done iterations`
 }
 
 export const MemoHook = () => {
 
-    const {increase, counter} = useCounter(50);
-    const [show, setShow] = useState(true);
+    const [counter, setCounter] = useState(0);
+    const increment = () => {
+        setCounter(counter + 100)
+    }
 
-    const messageMemorize = useMemo(() => heavyStuff(counter),[counter]);
+    const [otherS, setOtherS] = useState(false);
+    const changeVal = () => {
+        setOtherS(!otherS)
+    }
+
+    const messageMemo = useMemo(() => heavyStuff(counter), [counter]);
 
     return (
-        <>
-            <h1>Counter <small>{counter}</small></h1>
-            <hr />
-            <h4>{messageMemorize}</h4>
-            <button onClick={() => increase(50)}>+1</button>
-            <button onClick={() => setShow(!show)}>Show / Hide {JSON.stringify(show)}</button>
-        </>
+        <div>
+            <h1>Counter: {counter}</h1>
+            {/* <h4>{heavyStuff(counter)}</h4> */}
+            {/* if we dont use the memo (line 21), and we only use the heavyStuff func, itll render on each change this component could have */}
+                {/* and we only want to use the func whenever the "counter" changes, not the "otherS" */}
+
+            <h4>{messageMemo}</h4> 
+            <button className='btn btn-outline-dark' onClick={increment}>+1</button>
+            <button className='btn btn-outline-dark' onClick={changeVal}>Change: {JSON.stringify(otherS)}</button>
+        </div>
     )
 }
