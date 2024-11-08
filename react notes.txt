@@ -214,3 +214,8 @@ querytstring package, can extract info from "search"(useLocation UdemyBC\06-Hero
 private routes: (\UdemyBC\06-Heroes-Spa\router\PrivateRoute.jsx -- ep 215 udemy)
     privateRoute
     publicRoute
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Array.from() == function to transform string to Array
+    const hol = "culo";
+    Array.from(hol)
+    = ['c', 'u', 'l', 'o']
