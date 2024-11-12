@@ -1,27 +1,27 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { Hijo } from './Hijo';
 
 export const Padre = () => {
 
-    const numbers = [2,4,6,8,10];
-    const [counter, setCounter] = useState(0);
+    const numeros = [2,4,6,8,10];
+    const [valor, setValor] = useState(0);
 
-
-    const incrementFunc = useCallback((newVal) => {
-        setCounter((c) => c + newVal)
-    },[]);
-
+    const increment = useCallback((num) => {setValor(c => c + num)}, [])
 
     return (
-        <>
+        <div>
             <h1>Padre</h1>
-            <p>Total: {counter}</p>
-            <hr />
+            <p>Total: {valor}</p>
+            <hr/>
             {
-                numbers.map((number) => (
-                    <Hijo key={number} increment={incrementFunc} number={number}/>
+                numeros.map(n => (
+                    <Hijo
+                        key={n}
+                        numero={n}
+                        increment={increment}
+                    />
                 ))
             }
-        </>
+        </div>
     )
 }

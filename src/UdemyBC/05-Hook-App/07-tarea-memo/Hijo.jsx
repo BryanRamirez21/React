@@ -1,10 +1,17 @@
 import React, { memo } from 'react'
 
-export const Hijo = memo(({number, increment}) => {
-    console.log("hola")
+export const Hijo = memo(({increment, numero}) => {
+
+    console.log("im here again");
+
     return (
         <>
-            <button onClick={() => increment(number)}>{number}</button>
+            <button
+                className='btn btn-primary mr-3'
+                onClick={() => increment(numero)}
+            >
+                {numero}
+            </button>
         </>
     )
 })
