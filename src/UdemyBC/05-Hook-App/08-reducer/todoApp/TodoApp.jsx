@@ -1,27 +1,23 @@
-import React, { useEffect, useReducer } from 'react'
+import React, { useEffect, useReducer, useRef, useState } from 'react'
 import { TodoList } from './components/TodoList';
-import { TodoAdd } from './components/TodoAdd';
 import { useReducerApp } from './useReducerApp';
+import { TodoAdd } from './components/TodoAdd';
 
 export const TodoApp = () => {
 
-    const {todos, handleAddTodo, handleDel, handleToggle, todosCount, todosPending} = useReducerApp();
+    const {todos, total, pending, onSubmit, onDelete, onComplete} = useReducerApp()
 
     return (
         <>
             <h1>ToDo App</h1>
-            <h3>Total: {todosCount} / Pending: {todosPending}</h3>
+            <h3>Total: {total} / Pending: {pending}</h3>
             <hr />
             <div className='row'>
                 <div className='col-7'>
-                    <TodoList 
-                        todos={todos} 
-                        onDelete={handleDel}
-                        onHandleToggle={handleToggle}
-                    />
+                    <TodoList todos={todos} onDelete={onDelete} onHandleToggle={onComplete}/>
                 </div>
                 <div className='col-5'>
-                    <TodoAdd newTodo={handleAddTodo}/>
+                    <TodoAdd newTodo={onSubmit}/>
                 </div>
             </div>
             

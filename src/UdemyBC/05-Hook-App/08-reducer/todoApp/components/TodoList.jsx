@@ -6,12 +6,10 @@ export const TodoList = ({todos, onDelete, onHandleToggle}) => {
         <>
             <ul className='list-group'>
                 {
-                    todos.map((todo) => (
-                        //! i tried: "onDelete={id}" BUT NO, the component its sendind the reference to the funcion
-                        //!     from the father, here the function hasnt been referenced, until inside the params of this compo
+                    todos.map(todo => (
                         <TodoItem 
-                            key={todo.id} 
-                            todo={todo} 
+                            key={todo.id}
+                            todo={todo}
                             onDelete={onDelete}
                             onHandleToggle={onHandleToggle}
                         />
