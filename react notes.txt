@@ -219,3 +219,7 @@ Array.from() == function to transform string to Array
     const hol = "culo";
     Array.from(hol)
     = ['c', 'u', 'l', 'o']
+----------------------------------------------------------------------------------------------------------------------------------------------------
+for useContext =
+    create context -> define funcs, set provider -> use provider as HOC -> use funcs on childs/grandChilds, etc
+    
