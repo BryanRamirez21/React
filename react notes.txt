@@ -222,4 +222,12 @@ Array.from() == function to transform string to Array
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 for useContext =
     create context -> define funcs, set provider -> use provider as HOC -> use funcs on childs/grandChilds, etc
-    
+----------------------------------------------------------------------------------------------------------------------------------------------------
+TO USE ROUTES:
+<browserRouter>
+    <Routes>
+        <Route path='login' element={ <Login /> }>
+        <Route path='/*' element={ <Navigate to='/404' /> } />
+            <Link>
+    </Routes>
+</browserRouter
