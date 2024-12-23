@@ -219,3 +219,8 @@ Array.from() == function to transform string to Array
     const hol = "culo";
     Array.from(hol)
     = ['c', 'u', 'l', 'o']
+--------------------------------------------------------------
+TO CREATE ROUTES:
+
+const routes = createBrowserRouter([components routes]) //itll have wich components render at a specific path
+    d
