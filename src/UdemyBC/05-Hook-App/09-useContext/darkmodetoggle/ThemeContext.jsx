@@ -1,4 +1,2 @@
-import { createContext } from "react";
-
-//! not usecontext, createcontext
+import React, { createContext } from "react";
 export const ThemeContext = createContext();

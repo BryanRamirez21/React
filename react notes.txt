@@ -219,8 +219,18 @@ Array.from() == function to transform string to Array
     const hol = "culo";
     Array.from(hol)
     = ['c', 'u', 'l', 'o']
---------------------------------------------------------------
-TO CREATE ROUTES:
-
-const routes = createBrowserRouter([components routes]) //itll have wich components render at a specific path
-    d
+----------------------------------------------------------------------------------------------------------------------------------------------------
+for useContext =
+    create context -> define funcs, set provider -> use provider as HOC -> use funcs on childs/grandChilds, etc
+----------------------------------------------------------------------------------------------------------------------------------------------------
+TO USE ROUTES:
+<browserRouter>
+    <Routes>
+        <Route path='login' element={ <Login /> }>
+        <Route path='/*' element={ <Navigate to='/404' /> } />
+            <Link>
+    </Routes>
+</browserRouter
+----------------------------------------------------------------------------------------------------------------------------------------------------
+you can pass a comp as child comp, usign props:
+    EG: ep 245 udemy 
