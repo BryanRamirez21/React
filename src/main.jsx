@@ -9,12 +9,13 @@ import { CountersApp } from './UdemyBC/05-Hook-App/08-reducer/multipleCounter/Co
 import { MainApp } from './UdemyBC/05-Hook-App/09-useContext/loginNav/MainApp.jsx';
 import { MainTheme } from './UdemyBC/05-Hook-App/09-useContext/darkmodetoggle/MainTheme.jsx';
 import { JournalApp } from './UdemyBC/07-journal-app/JournalApp.jsx';
+import { MainRoute } from './UdemyBC/05-Hook-App/10-routes/MainRoute.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
-    <BrowserRouter>
-      <JournalApp />
-    </BrowserRouter>
+    //<BrowserRouter>
+      <MainRoute />
+    //</BrowserRouter>
     
   //</React.StrictMode>,
 )

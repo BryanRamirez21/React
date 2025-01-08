@@ -224,13 +224,54 @@ for useContext =
     create context -> define funcs, set provider -> use provider as HOC -> use funcs on childs/grandChilds, etc
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 TO USE ROUTES:
-<browserRouter>
-    <Routes>
-        <Route path='login' element={ <Login /> }>
-        <Route path='/*' element={ <Navigate to='/404' /> } />
-            <Link>
-    </Routes>
-</browserRouter
+    <browserRouter>
+        <Routes>
+            <Route path='login' element={ <Login /> }>
+            <Route path='/*' element={ <Navigate to='/404' /> } />
+        </Routes>
+    </browserRouter
+
+OR...
+
+    export const xxx = () => {
+        const router = createBrowserRouter([
+            { 
+                path: "/",
+                element: <Main />,
+                errorElement: <NotFound />
+            },
+            { 
+                path: "/pages",
+                element: <Pages />,
+                children:[
+                    { 
+                        path: "/pages/:pageID",
+                        element: <subpage />
+                    },
+                ]
+            },  
+        ])
+        return (
+            <>
+                <RouterProvider router={router}>
+                </RouterProvider>
+            </>
+        )
+    }
+
+
+
+        the <Link> and the <a> kind of works the same, using a link to redirect the user,
+            the difference its that the <a> its going to refresh the whole page before showing the new page,
+            and the <Link> will not, only navigate the page not interrumpting or refresh any process
+
+        when we want to <Link> dynamic pages we can use the "path: /page/pageID" the id can be any named, 
+            with this 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 you can pass a comp as child comp, usign props:
-    EG: ep 245 udemy 
+    EG: ep 245 udemy
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+REDUX:
+
+    s
