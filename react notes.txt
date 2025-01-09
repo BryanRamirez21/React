@@ -275,3 +275,5 @@ you can pass a comp as child comp, usign props:
 REDUX:
 
     s
+
+    "un thunk es una accion que es async, que dispara otra accion. "
