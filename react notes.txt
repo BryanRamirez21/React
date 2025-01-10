@@ -277,3 +277,6 @@ REDUX:
     s
 
     "un thunk es una accion que es async, que dispara otra accion. "
+
+    RTK its super useful because each time you do a fetch, it will always cached prev fetches
+        (src\UdemyBC\08-toolkit-redux\ToDoApp.jsx -- ep 271 udemy react)

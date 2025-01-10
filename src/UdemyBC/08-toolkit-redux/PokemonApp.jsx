@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPokemons } from './store/slices/pokemon/Thunks';
-import { incPage } from './store/slices/pokemon/pokemonSlice';
 
 export const PokemonApp = () => {
 
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-      dispatch(getPokemons())
-    }, []);
+    const dispatch = useDispatch();    
     
     const {page, pokemons, isLoading} = useSelector(state => state.pokemons); //? pokemons y no pokemon (?)
     //const {counter} = useSelector(state => state.counter);
+
+    useEffect(() => {
+        dispatch(getPokemons())
+    }, []);
 
     return (
         <>
@@ -28,7 +27,7 @@ export const PokemonApp = () => {
                     ))
                 }
             </ul>
-            <button onClick={() => dispatch(incPage())}>next page</button>
+            <button disabled={isLoading} onClick={() => dispatch(getPokemons(page))}>next page ({page})</button>
         </>
 
     )
