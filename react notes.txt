@@ -280,3 +280,20 @@ REDUX:
 
     RTK its super useful because each time you do a fetch, it will always cached prev fetches
         (src\UdemyBC\08-toolkit-redux\ToDoApp.jsx -- ep 271 udemy react)
+
+
+
+los thunks son acciones que yo puedo dispachar pero tienen una tarea async (si son sincrones las Podemos poner en los reducer )
+
+proceso para usar redux:
+
+creamos nuestro store (store tiene la llamada al reducer de los slices, y se usa configureStore)
+
+creamos nustros slices (slcie tiene el state de lo que vamos a usar[que tiene el nombre, state y reducers], y los reducers con un state como param, el action y/o el payload)
+	dentro de los reducer de los slices, podemos hacer cambios a las props del initalState del slice, usando 	"state.(nombre de la prop del initialState)
+
+	al final, exportamos los nombres de los reducers, que estan dentro del createSlice, como 	"slice.actions" )
+
+Creamos los thunks, que mandaran los reducer para ser usados por los components (creamos como una const a exportar por cada reducer que usaremos, usando como params las props del state/slice al que corresponde, retornando siempre un callback async, que usa como param el dispacth, el callback retornara el "dispacth(funcionDelSlice())
+
+para que un component use un reducer, primero importamos useDispacth(), con eso, se los pondremos a una const que llamamos "dispatch", esa const tendra como param el nombre del reducer que viene del slice, pasa por el thunk y usa el component
