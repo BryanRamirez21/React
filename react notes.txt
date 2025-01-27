@@ -274,9 +274,21 @@ you can pass a comp as child comp, usign props:
 
 REDUX:
 
-    s
+    HOW TO CREATE/USE REDUX TOOLKIT
+
+    (on the main.jsx):
+    <Provider store={sotreRoute} />
+
+
+
 
     "un thunk es una accion que es async, que dispara otra accion. "
 
     RTK its super useful because each time you do a fetch, it will always cached prev fetches
         (src\UdemyBC\08-toolkit-redux\ToDoApp.jsx -- ep 271 udemy react)
+
+    the "store" contains the state of the app and the REDUCER
+
+    when we have an app that uses redux, and a big global state (user data, logins, etc), its recommendable on the store to divide that big state into SLICES
+
+    in order to use our global state (the store) we use the hook: USESELECTOR()
