@@ -340,7 +340,22 @@ grafico con limite superior/inferior
 
 
 ensayo de amplitud/profundidad
+=== El ensayo de amplitud se enfoca en cubrir un amplio rango de temas, aspectos o variables relacionados con un problema o área de estudio. Su objetivo es proporcionar una 
+	visión general y explorar múltiples facetas del tema en cuestión. por ejemplo En un estudio de mercado, un ensayo de amplitud podría analizar múltiples factores que 
+	influyen en las ventas (precio, publicidad, competencia, etc.), sin profundizar en cada uno.
+
+	Y un ensayo de profundidad, El ensayo de profundidad se enfoca en analizar en detalle un aspecto específico de un problema o tema. Su objetivo es proporcionar una 
+	comprensión profunda y exhaustiva de un área particular. por ejemplo En educación, un ensayo de profundidad podría explorar cómo un método de enseñanza específico 
+	(por ejemplo, el aprendizaje basado en proyectos) impacta el rendimiento de los estudiantes.
+
+
+
 ensayo estructural
+=== El ensayo estructural es un tipo de prueba o análisis que se realiza para evaluar la integridad, resistencia y comportamiento de una estructura bajo diferentes 
+	condiciones.
+
+
+
 prueba exhaustiva
 prueba de descicion/declaracion
 niveles de prueba
