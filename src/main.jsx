@@ -6,13 +6,13 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom';
 import { JournalApp } from './UdemyBC/07-journal-app/JournalApp.jsx';
 import { store } from './UdemyBC/07-journal-app/store/'
-import { Try } from './Try.jsx'
+import { CounterBack } from './TRYS/CounterBack.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
   //<Provider store={store}>
     //<BrowserRouter>
-      <Try />
+      <CounterBack />
     //</BrowserRouter>
   //</Provider>
     

@@ -1,0 +1,391 @@
+buenas
+53
+
+malas
+27
+--------------------------------------
+notas:
+
+el codigo penal habla sobre los delitos digitales, asi como los derechos de autor y proteccion de datos
+
+
+
+en la optimizacion, primero esta un redizeño y luego la optimizacion
+
+
+
+para solificar una propuesta de valor, primero hay que conocer al mercado (17:25)
+
+
+
+revisar 25:00 (costos)
+
+el diagrama de pareto nos puede ayudar a dar prioridad a actividades, mas que solmanete ver su flujo (para eso es eldashboard) 
+== Un diagrama de Pareto es una técnica que permite clasificar gráficamente la información de mayor a menor relevancia, con el objetivo de reconocer 
+	los problemas más importantes en los que deberías enfocarte y solucionarlos.
+
+
+
+(29:00)
+pert, son problemas donde me preguntaran sobre tiempo optimizta(o), medio(m) y pesimista(p)
+	su formula para calular la duracion estimada es: t = (o + 4m + p) / 6
+==  Program Evaluation and Review Technique, Proporciona una representación visual del cronograma de un proyecto y desglosa las tareas individuales. 
+	Este diagrama es similar al diagrama de Gantt, pero su estructura es diferente.
+
+
+
+(32.19)
+cocomo se usara para preguntas de estimacion de costos ("se hara un software que esta en determinacino de costos, bla")
+== constructive cost model, metodo para estimar el costo, esfuerzo y tiempos para el desarrollo de un proyecto de software. Usa parametros como el tamaño, esfuerzo, 
+	tiempo y calidad, donde los principales son el effort(cantidad de trabajo requerido para completar, se mide en unidades de persona-mes) y 
+	el schedule(la cantidad de tiempo que se necesita para completar la tarea, va de semanas a meses).
+	TIENE 3 MODELOS QUE SE BASAN EN LA COMPLEJIDAD DEL PROYECTO: Organic(proyects peques sin requisitos rigidos), Empotrada(EMBBEDED, systems con restricciones operativas rigidas
+	donde el softw debe operar en limites estrechos) y semilibre(para projects grandes, donde hay XP y no hay restricciones rigidas).
+	Ademas, tiene una variacion que es casi un mdoelo, ITNERMEDIA: una variazion mas detallada de cocomo que usa caracteristicas del proyecto para la estimacion
+
+
+
+(32.40)
+recorridos PERT (que camino es mas pesado o de ruta mas larga)
+== solo es sumar los nodos
+
+
+(31:10) && (33.20)
+"tecnicas para considerar riesgos en un proyecto (juicio de experto, estimacion ascendente, analisis de reserva)"
+===metodos de estimacion de proyectos: son técnicas que te ayudan a estimar con precisión el tiempo, el presupuesto y los recursos necesarios para completar un proyecto con 
+	éxito. teniendo 6 metodos principales: 
+	- ESTIMACION DESCENDENTE(desglosa dicho alcance en fases, trabajos y tareas, según la estructura de desglose del trabajo (WBS).)
+	- ASCENDENETE(analiza primero las fases individuales del proyecto para luego definir el cronograma o el presupuesto general.) 
+	- 3 PUNTOS(toma un promedio de tres cifras para determinar el esfuerzo necesario para completar una tarea individual[mejor estimacion, estimacion optimista, pesimista]), ANALOGA()
+	- ANALOGA(comparativa usa los requisitos de proyectos anteriores similares para crear una estimación para el proyecto actual.)
+	- PARAMETRICA(utiliza datos históricos de proyectos anteriores similares, pero además tiene en cuenta las diferencias entre los proyectos pasados ​​y el proyecto actual.)
+	- JUICIO DE EXPERTOS(ser el método más rápido y sencillo, ya que se basa en la “intuición” de un experto para estimar los proyectos.)
+
+	en el piloto marcaba las siguientes como "tecnicas de costeo" pero parece que tambien son metodos de estimacion:
+	- ANALISIS DE RESERVA(nos permite, basado en la incertidumbre, estimar una cantidad adicional al coste que hemos identificado, generando lo que se conoce como 
+		“reserva de contingencia”)
+	- VALOR MONETARIO ESPERADO(es el resultado producto del impacto (consecuencia) del riesgo en dinero por su probabilidad de ocurrencia, esto es:
+		VME = Impacto x Probabilidad)
+	- RESERVA DE CONTINGENCIA(será calculada a través de una combinación estadística de los Valores Monetarios Esperados. " Si identificamos un riesgo que eventualmente 
+		pueda impactar positivamente al proyecto (Oportunidad) entonces el VME será un valor negativo y en consecuencia disminuye la reserva de contingencia.")
+	- RESERVA DE GESTION(se refiere a aquella cantidad destinada para aquellos riesgos no conocidos)
+	- COSTES DE CALIDAD(hay de conformidad/prevencion y no conformidad/correcion, los primeros se estiman para la calidad del desarrollo, los segundos
+		 son aquellos que se incurren por no conseguir la calidad en el producto 
+	- SOFTWARE DE ESTIMACION DE COSTOS: un software que estima costos para actividades usando parametros 
+	- ANALISIS DE PROPUESTA(consiste en obtener estimaciones de costes para un trabajo específico por parte de proveedores, con lo cual obtendremos una idea aproximada 
+		de lo que costará el trabajo)
+
+
+
+(34.30)
+interpretar diagramas RUP 
+== 2, 56
+-----------------------------
+GESTION DE PROYECTOS INFORMATICOS
+
+
+(explicados en 39.47)
+analizar y evaluar la pertinencia de un cambio en un sistema de software, es escencial considerar varios aspetos
+== al evaluar un camvio en el sistema es vital evaluar como afectara a los proyectos actuales, si hay recursos disponobles para implemetnar el cambio y si los beneficios
+	de hacer el cambio superan los costos. estos son los factores más criticos a considerar para determinar si se debe proceder con el cambio.
+	"pertinencia al cambio === si se puede hacer el cambio"
+
+
+
+(42.29)
+interpretar arbol de desicion para costos estimados 
+== funciona simplemente calculando el costo de cada rama, por su porcentaje, y cada rama debe dar un 100 de oircentaje (build -> [simple -> 0.3 * 380k , diff -> 0.7 * 490k]
+https://es.slideshare.net/slideshow/psw-unidad-4-estimacin-de-proyectos-de-software-250513512/250513512#48
+
+
+
+(44.00)
+para determinar el orden en que se deben atender risgos, es util calcular la exposicion al riesgo, multiplicando la probalidida de que ocurra por el impoacto financiero
+ 
+
+
+cuando veas una pregunta donde te pidan hacer una planeacion y parte de la respuesta es hbalar con el cliente (tu pensarias que es priemro pero no), casi siempre es entre 
+el 2do y 3er paso
+
+
+
+ver como es un acta de constitucion
+=== una presentación de alto nivel de los objetivos, el alcance y las responsabilidades del proyecto para obtener la aprobación de las partes interesadas clave al inicio 
+	del proyecto, ademas de autorizar su inicio, por lo general tiene 7 etapas (Análisis de requisitos, Planificación o ideació, Diseño, Desarrollo, Pruebas, Despliegue,
+	Operaciones y mantenimiento)
+
+
+
+(52.23)
+metodologias para entregas (cascada, scrum, v-model) 
+=== todo comienza con el ciclo de vida de desarrollo de un software (SDLC), que es es un proceso completo de desarrollo de una solución de software con diferentes 
+	etapas y pasos para llevar el software desde la ideación hasta la construcción, despliegue y mantenimiento. Incluye varios modelos y metodologías que 
+	pueden ser utilizados para gestionar y organizar el proceso de desarrollo. dentro hay modelos y metodologias agiles (la diferencia es que
+	la metodología de desarrollo se refiere al enfoque general para gestionar un proyecto de software, mientras que el método ágil es una filosofía específica 
+	dentro de las metodologías de desarrollo que prioriza la flexibilidad y la colaboración)
+	LOS MODELOS DE DESARROLLO SON: cascada, v-model, incremental, rad, iterativo, spiral, prototype, agile.
+	LAS METODOLOGIAS AGILES SON:   scrum, kanban, extreme programing(XP)
+https://www.geeksforgeeks.org/top-8-software-development-models-used-in-industry/?ref=lbp
+
+
+
+(52.49)
+principios para optimizacion de rendimiento (refactoring, polimoformismo, modularidad) 
+== el refactoring es optimizar el codigo para su lectura y mantenimiento. El polimorfismo es mas de POO que hace que un objeto pueda tomar múltiples formas.
+	la modularidad es dividir un programa en piezas o modulos mas paqueños para reutilizar
+
+
+
+Principios SOLID:
+Patrones de Diseño:
+Arquitectura Limpia (Clean Architecture)
+
+
+
+(55.00)
+calcular porcentaje de analisis de requerimentos tomando en cuenta actividades ya hechas 
+(se hace dividiendo los dias completados entre la duracion total de todas las acts, y multiplicando por 100)
+===
+act 1, 1 dia,  todo listo
+act 2, 1 dia,  la mitad lista (0.5 dias)
+act 3, 3 dias, 13 encuestas de 16 ((13/16)*3 === 2.4375 dias)
+act 4, 7 dias, 8 de 12 reportes ((8/12)*7 === 4.6667 dias)
+DIAS LISTOS: (1 + 0.5 + 2.4375 + 4.6667 === 8.6042)
+PORCENTAJE DE AVANCE === (8.6042 / 12(dias propuestos))*100 === 71.7%
+
+REVISA DEEPSEEK PARA PRACTICAR
+
+
+
+normalizacion y defragmentacion en las bd
+=== En bases de datos relacionales, especialmente las grandes, necesitas ordenar las entradas, la normalización de base de datos 
+	implica organizar una base de datos en varias tablas para reducir redundancia(duplicar datos que ya existen en otras tablas).
+La desfragmentación de una base de datos es un proceso que reorganiza los datos almacenados en la BD para optimizar su rendimiento.
+
+
+
+algoritmo de busqueda (binaria y otros), 
+=== Los algoritmos de búsqueda son procedimientos sistemáticos utilizados para encontrar un elemento deseado dentro de un conjunto de datos. los mas comunes son:
+	- lineal/secuencial (recorre secuencialmente cada elemento hasta encontrar o el final)
+	- binaria (divide repetidamente el conjunto de datos a la mitad y compara el elemento deseado con el elemento central de cada división)
+	- arbol binario (estructuras de datos que permiten una búsqueda eficiente en conjuntos de datos ordenados, basasdo en nodos con hijo de izq y derech)
+	- hash (utiliza una función hash para calcular una ubicación específica dentro de una estructura de datos conocida como tabla hash)
+	- interpolacion (estima la ubicación del elemento deseado mediante una interpolación lineal entre los valores del primer y último elemento)
+	- busqueda de patrones (utilizado para encontrar ocurrencias de patrones o secuencias específicas dentro de una cadena de caracteres o texto, como palabras clave)
+
+base de datos dinamica
+== tipos de BD
+	UNA BD NO ES UNA TABLA DE SQL!!!
+
+	- jerarquicas: se organizan como arbol donde la data tiene niveles o rangos hacia abajo
+	- netwrok: basada en la jerarquica tiene childs que tienen ralacion con records de un BD de arriba, de hay el netwrok
+	- orientada a objetos: si se basa en la POO, la data se guarda como un objeto con sus respectivas props, por lo general se usa con funciones, como: "getLatestAddress()"
+	- relacional: la tabla de sql, donde toda la data tiene una relacion mediante la PK y la FK
+	- nube: de la nube para eliminar la infraestructura y ser mas dinamica
+	- centralizadas: con infraestructura y para una acceso fisico
+	- operacionales: diseñada para operar en producc
+	- nosql: BD que no se basa en tablas relacionales, diseñadas para simpleza y escalabilidad horizontal, como MONGODB
+
+algoritmo de ordacion por burbuja
+=== son un conjunto de instrucciones que toman un arreglo o lista como entrada y organizan los elementos en un orden particular. como:
+	- Selection sort: se busca el elemento más pequeño de la lista y se intercambia con el primer elemento. Luego, se busca el segundo elemento más pequeño y se 
+				intercambia con el segundo elemento, y así sucesivamente
+	- Bubble sort: comparar pares de elementos adyacentes y si están en el orden incorrecto, intercambiarlos.
+	- Insertion sort: Se toma un elemento de la lista y se inserta en la posición correcta de la lista ordenada, desplazando los elementos necesarios
+	- Merge sort: comienza desde la parte superior con el array completo, dividiendo de dos en dos hasta completar la lista, luego procede hacia abajo a los elementos 
+				individuales con recursión.
+	- Quick sort: dividiendo la lista en dos sub-listas, una con elementos menores que un pivote y otra con elementos mayores. Luego, se ordenan recursivamente las 
+				sub-listas.
+	- Heap sort: se basa en arbol, buscaremos el elemento máximo y lo colocaremos en la parte superior del montón máximo. Lo colocaremos en el nodo principal del 
+					árbol binario, asi sucecivamente donde el menor del raiz ira a la izq y el mayor al menor, a la derech.
+	- Counting sort: es no comparativo. Ordena un array contando las ocurrencias de cada elemento único
+	- Radix sort: es no comparativo. Este algoritmo evita las comparaciones insertando elementos en cubos de acuerdo con el radix 
+					(Radix/Base es el número de dígitos únicos utilizados para representar números.
+	- Bucket/casilleros: ordena los elementos de una lisita dividiéndolos en botes dependiendo de su rango numerico y luego ordena cada bote individualmente
+
+
+algoritmo de reparto de recuros
+=== son varios algoritmos, es técnica utilizada para asignar recursos limitados (como memoria, CPU, ancho de banda, dispositivos de E/S, etc.) entre múltiples procesos,
+	entre los cuales estan
+	- planificación de CPU
+	- asignación de memoria
+	- asignación de dispositivos de E/S
+	- asignación de ancho de banda en redes
+	- prevencion de interbloqueo
+
+
+
+(1.0.26)
+varianza
+=== para calcular cuando "actividad A costo X y tiene Y avance", 
+	EV puede ser el costo que llevamos X el avance
+
+	varianza de valor ganado(VAC) = valor planeado(PV) - valor ganao(EV)
+	varianza del costo(CV) = EV - costos reales(AC)
+600-(600*0.33)	= 402
+400-(400*0.50)	= 200
+200-(200*1)	= 0
+===
+198-300		= -102
+200-400		= -200
+200-200 	= 0
+
+
+pmbook
+=== PMBOK o Project Management Body of Knowledge es una guía realizada por el PMI con el fin de que los Project Managers puedan tener a mano las principales 
+	directrices, buenas prácticas y conceptos fundamentales de la gestión de proyectos. NO ES UNA METOLOGIA, es mas una guia textual. describe 5 fases
+	iniciacion, planificacnio, ejecucion, Monitoreo y control, cierre
+
+
+
+cuando veas una pregunta donde te pidan colocar un sistema de control de versiones (tu pensarias que es antes de las pruebas, capacitacion, y lanzamiento pero no), 
+casi siempre es de los ultimos
+
+
+
+estructuras de datos, de basica a compleja (vectores, arreglos, estructuras dinamicas, cadenas, estructuras)
+===
+arreglos -> vectores -> cadenas -> estructuras -> estructuras dinámicas
+
+tambien hay estructuras de datos como:
+Listas Enlazadas -> Pilas (Stacks) -> Colas (Queues) -> Árboles -> Grafos -> Tablas Hash -> Heaps -> Estructuras Dinámicas (como árboles balanceados
+
+
+
+(1.4)
+creacion y gestion de BD 
+=== La secuencia lógica para crear y gestionar una base de datos es la siguiente:
+	- Modelo relacional: Define la estructura lógica de la base de datos.
+	- Diseño lógico: Convierte el modelo relacional en un diseño concreto (tablas, campos, relaciones).
+	- Campos: Define los elementos individuales de datos.
+	- Tablas: Agrupa los campos relacionados en tablas.
+	- Registros: Define cómo se organizarán los datos en filas (registros).
+	- Normalización: Reduce la redundancia y mejora la integridad de los datos.
+	- Diseño físico: Define cómo se almacenarán los datos en el sistema.
+	- Sistemas gestores de bases de datos (SGBD): Implementa y gestiona la base de datos.
+
+
+
+
+auditoria, auditoria informatica, informe de errores
+== una auditoria es es un tipo de programa informático que realiza una amplia gama de funciones de gestión de auditoría. Este software se utiliza para planificar, 
+	abordar y mitigar los riesgos que podrían comprometer la seguridad y la calidad de los bienes o servicios que ofrece una empresa. Algunas de las funciones 
+	más comunes son el muestreo de bases de datos y la generación de cartas de confirmación para clientes y proveedores
+
+== una auditoria informatica es  proceso de evaluación y revisión sistemática de los sistemas de información de una organización para garantizar su adecuación, confiabilidad, 
+	seguridad y cumplimiento de las leyes y regulaciones pertinentes.
+
+lan y wan
+=== local area network, wide area network
+
+
+
+la capacitacion, por alguna razon, es casi el primer paso en una implementacion
+
+
+
+matriz de RIESGOS
+=== La matriz de riesgos analiza los riesgos del proyecto en función de su probabilidad y gravedad. Una vez que identifiques los riesgos, podrás calcular el impacto general y 
+	otorgarle a cada riesgo la prioridad que le corresponda. Para crear una matriz debemos:
+
+	1. Identificación de los riesgos.
+	2. Categorización de riesgos basada en su naturaleza.
+	3. Asignación de un valor de probabilidad a cada riesgo.
+	4. Asignación de un valor de impacto a cada riesgo.
+	5. Elaboración de la matriz cruzando probabilidad e impacto.
+	6. Propuesta de acciones correctivas para los riesgos más críticos.
+
+---------------------------------------------------------------------------------------------------------
+complejidad ciclomatica
+===  se basa en el diagrama de flujo determinado por las estructuras de control de un determinado código. Un nombre más adecuado podría ser Complejidad condicional ya que el 
+	cálculo de esta métrica se ajusta más al hecho de buscar condiciones que contar ejecuciones de predicados dentro de bucles.
+	Se basa de contar el número de ciclos diferentes que se siguen en un fragmento de código de un programa habiendo creado una rama imaginaria desde el nodo de salida 
+	al nodo de entrada del diagrama de flujo correspondiente a este fragmento de código.
+	SE PUEDE DECIR QUE LA COMPLEJIDAD CICLOMATICA ES PRUEBA DE CAJA BLANCA, ya que evalua la estructura del software
+
+
+
+prueba caja blanc/negra/roja/verde
+	=== SOLO HAY PRUEBAS DE CAJA NEGRA, BLANCA Y GRIS
+
+	son técnicas de testing en la que se evalúa el funcionamiento de un sistema o software ya sea conociendo su estructura(blanca), no haciendolo(negra)
+	o medio conociendo(gris). las pruebas de cajas que hay son:
+
+	CAJA NEGRA: Las pruebas de caja negra consisten en probar un sistema o programa informático sin tener conocimiento previo de su funcionamiento interno y se enfoca
+			entradas y salidas. Por lo general se realiza esta prueba al final del desarrollo, poco antes del lanzamiento. donde las personas mas importantes 
+			que lo prueban son: tester, Analista de control de calidad,  Promotor, Responsable de control de calidad, Jefe de proyecto. Y tiene 12 pruebas 
+			funcionales, regresión, rendimiento, usabilidad, compatibilidad, seguridad, aceptación, integración, carga, estrés, recuperación, instalación
+
+	CAJA GRIS: es una forma de prueba que combina la prueba de caja blanca y la prueba de caja negra, utilizando una comprensión parcial del diseño subyacente y la 
+			forma en que se implementa el sistema. Se realiza esta prueba cuando una aplicación necesita interactuar con una herramienta de terceros para 
+			funcionar correctamente, los probadores no tienen acceso al código fuente que forma parte del software externo. donde las personas mas importantes 
+			que lo prueban son: tester, Analista de control de calidad,  Promotor, Responsable de control de calidad. Y tiene por lo menos 4 pruebas 
+			integración, API, BD, seguridad
+
+	CAJA BLANCA: (también conocidas como pruebas de caja de cristal, pruebas estructurales o pruebas de código abierto) es una técnica de prueba de software que consiste 
+			en probar la estructura interna y el diseño de un programa, en contraposición a los resultados externos o la experiencia del usuario final que se 
+			prueban en la prueba de caja negra. Las pruebas de caja blanca son un término genérico que engloba muchos tipos diferentes de pruebas de software, 
+			incluidas las pruebas unitarias y las pruebas de integración. Dado que las pruebas de caja blanca implican probar el código y la programación, 
+			llevarlas a cabo suele requerir ciertos conocimientos de programación informática. Lo más habitual es que las pruebas de caja blanca se realicen 
+			cuando los desarrolladores y los probadores llevan a cabo pruebas unitarias y, a veces, durante las pruebas de integración.
+			Las pruebas de caja blanca casi siempre las llevan a cabo desarrolladores e ingenieros de software. Y tiene por lo menos 4 pruebas 
+			integración, unitarias, de flujo de control y manejo de errores
+
+
+
+grafico con limite superior/inferior
+=== El gráfico que utiliza un límite superior y un límite inferior es el gráfico de control (también conocido como gráfico de control de calidad o control chart en inglés). 
+	Este tipo de gráfico es una herramienta estadística utilizada en el control de procesos para monitorear y gestionar la variabilidad de un proceso a lo largo del tiempo.
+
+
+
+ensayo de amplitud/profundidad
+ensayo estructural
+prueba exhaustiva
+prueba de descicion/declaracion
+niveles de prueba
+análisis del valor de la frontera
+prueba alfa/beta
+pruebas adhoc
+prueba de rendimiento (no es funcional)
+spice
+kloc
+puntos de funcion
+tamaño del modulo
+Standard Enforcer
+análisis estático
+NCSS
+analizador estatico / inspector de codigo / ejecutor estandar
+generador de pruebas de arnes / de archivo
+herramienta ejecutora estándar
+Execution Verifier
+mantenimiento de softw se clasifica en cuántas categorías (4 ?)
+fases en Taute Maintenance Model
+pruebas de regresion / sistema / integracion / unitarias
+técnicas de reevaluación selectiva
+eficiencia / presicion / generalidad / inclusividad
+diagranas con UML ("considerando el modelaod de bs de datos")
+generalizacion / realizacion / agregacion / dependencia
+Diagrama de relaciones entre entidades
+clases controlador / entidad / limite / negocios
+modelo de Colaborador de responsabilidad de la clase
+Flujo de ejecución durante la depuración
+prueba de aceptacion / regresion / particion de equivalencia
+inge de softw / re-ing de softw / inge inversa / re-inge
+ACT en el modelo In Boehm para el mantenimiento del software
+sistemas heredados
+diferentes notaciones para UML (9)
+modelo de comportamiento / contexto / datos / estructural / interaccion
+diagramas de actividad
+ingeniería basada en modelos
+puerto paralelo
+códigos significativos
+ciclo de vida del desarrollo de sistemas (SDLC)
+ciclo de vida del desarrollo de software
+diagrama de flujo de datos / transicion de estaod / flujo de trabajo / flujo de trabajo
+modelo de proceso evolutivo
+modleo incremental / espiral
+WINWIN Spiral Model / Spiral Model
+modelo espiral / concurrente / incremental
+modelo de datos / contexto / comportamiento / estructural
+SCM 
