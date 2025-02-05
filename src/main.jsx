@@ -10,11 +10,11 @@ import { CounterBack } from './TRYS/CounterBack.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
-  //<Provider store={store}>
-    //<BrowserRouter>
-      <CounterBack />
-    //</BrowserRouter>
-  //</Provider>
+  <Provider store={store}>
+    <BrowserRouter>
+      < JournalApp/>
+    </BrowserRouter>
+  </Provider>
     
 
   //</React.StrictMode>,

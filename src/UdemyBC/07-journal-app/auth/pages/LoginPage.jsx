@@ -7,16 +7,19 @@ import { useDispatch, useSelector } from 'react-redux'
 import { checkingAuthentication, startGoogleSignIn } from '../../store/auth'
 import { useMemo } from 'react'
 
+const formData = {
+    email: 'bryan@mail.com',
+    password: '1234',
+    displayName: 'Bryan'
+}
+
 export const LoginPage = () => {
 
     const {status} = useSelector(state => state.auth);
 
     const dispatch = useDispatch();
 
-    const {email, password, onInputChange} = useForm({
-        email: 'bryan@mail.com',
-        password: '1234'
-    });
+    const {email, password, onInputChange} = useForm(formData);
 
     //* podemos usar un useMemo para regresar un bool
     //* voy a memorizar el resultado del status
