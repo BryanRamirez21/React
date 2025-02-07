@@ -4,6 +4,14 @@ buenas
 malas
 27
 --------------------------------------
+buenas
+22
+
+malas
+3
+
+min 25
+--------------------------------------
 notas:
 
 el codigo penal habla sobre los delitos digitales, asi como los derechos de autor y proteccion de datos
@@ -313,8 +321,9 @@ prueba caja blanc/negra/roja/verde
 
 	CAJA NEGRA: Las pruebas de caja negra consisten en probar un sistema o programa informático sin tener conocimiento previo de su funcionamiento interno y se enfoca
 			entradas y salidas. Por lo general se realiza esta prueba al final del desarrollo, poco antes del lanzamiento. donde las personas mas importantes 
-			que lo prueban son: tester, Analista de control de calidad,  Promotor, Responsable de control de calidad, Jefe de proyecto. Y tiene 12 pruebas 
-			funcionales, regresión, rendimiento, usabilidad, compatibilidad, seguridad, aceptación, integración, carga, estrés, recuperación, instalación
+			que lo prueban son: tester, Analista de control de calidad,  Promotor, Responsable de control de calidad, Jefe de proyecto. Y tiene 13 pruebas 
+			funcionales, regresión, rendimiento, usabilidad, compatibilidad, seguridad, aceptación, integración, carga, estrés, recuperación, instalación,
+			comportamiento
 
 	CAJA GRIS: es una forma de prueba que combina la prueba de caja blanca y la prueba de caja negra, utilizando una comprensión parcial del diseño subyacente y la 
 			forma en que se implementa el sistema. Se realiza esta prueba cuando una aplicación necesita interactuar con una herramienta de terceros para 
@@ -352,37 +361,178 @@ ensayo de amplitud/profundidad
 
 ensayo estructural
 === El ensayo estructural es un tipo de prueba o análisis que se realiza para evaluar la integridad, resistencia y comportamiento de una estructura bajo diferentes 
-	condiciones.
+	condiciones. A las pruebas de caja balcan, TAMBIEN SE LES CONOCE COMO PRUEBAS ESTRUCTURALES
 
 
 
 prueba exhaustiva
+=== Las pruebas exhaustivas son un tipo de prueba que se utiliza para descubrir todos los errores y defectos de un sistema de software. Este tipo de prueba se 
+	utiliza normalmente durante el proceso de desarrollo, antes de que el software sea liberado a los clientes, por lo que es poco practico de hacerlo ya que
+	puede retrasar el desarrollo.
+
+
+
 prueba de descicion/declaracion
+=== Una prueba de decisiónes una técnica utilizada para probar el comportamiento del sistema para diferentes combinaciones de entradas y La prueba de declaración de 
+	software consiste en una serie de verificaciones y evaluaciones que permiten identificar inconsistencias, errores o vulnerabilidades en el software antes de que llegue al usuario fina
+
+
+
 niveles de prueba
+=== son 4:
+	1- Unitarias o de módulo: se evalúan los componentes individuales que se pueden probar por separado.
+	2- Integracion: las unidades o módulos se combinan para una aprobación en conjunto, centradas en las interacciones entre componentes o sistemas. 
+	3- sistema: centradas en el comportamiento y las capacidades de un sistema o producto visualizando como un todo.
+	4- Aceptacion: centradas en el comportamiento y las capacidades de un sistema o producto visualizando como un todo.
+
+
+
 análisis del valor de la frontera
+=== El análisis de valores frontera es una técnica de diseño de pruebas de caja negra. Esta técnica se basa en los valores límite para diseñar casos de prueba. El análisis de valores 
+	frontera complementa la partición de equivalencia, ya que no solo se enfoca en las condiciones de entrada, sino también en el dominio de salida.
+
+
+
 prueba alfa/beta
+=== ALFA: La prueba alfa es un tipo de prueba de aceptación del usuario que suelen realizar los probadores de software internos antes de presentar el producto final a 
+	los usuarios finales.
+    BETA: son una forma externa de pruebas de aceptación del usuario, y las realizan usuarios reales en su entorno real
+
+
+
 pruebas adhoc
+=== Las pruebas ad hoc son un proceso de aseguramiento de la calidad que evita las normas formales y la documentación, lo que ayuda a los probadores a encontrar errores 
+	en su aplicación que los enfoques convencionales no pueden identificar.
+
+
+
 prueba de rendimiento (no es funcional)
-spice
-kloc
+=== Las pruebas no funcionales evalúan aspectos de un sistema más allá de sus requisitos funcionales. Algunos ejemplos son:
+	Capacidad
+	Rendimiento
+	Facilidad de uso
+	Recuperación
+	Portabilidad
+	spice
+	kloc
+
+
+
 puntos de funcion
+=== Un punto de función es una unidad de medida de un sistema de software que cuenta el número de entradas, procesos y 
+	salidas en un sistema. Se utiliza para estimar el tiempo y el costo necesarios para completar un proyecto de software
+
+
+
+SPICE 
+=== Software Process Improvement Capability Determination
+
+
+
 tamaño del modulo
+=== PARA MEDIR EL TAMAÑO DE UN SOFTWARE SE USA:
+	- KLOC(Kilo Lines Of Code): es una métrica que mide el tamaño del software en términos de la cantidad de líneas de código (LOC, por sus siglas en inglés). 
+		"Kilo" indica miles, por lo que 1 KLOC = 1,000 líneas de código.
+	- Puntos de funcion:  Los puntos de función son una métrica que mide el tamaño del software en términos de su funcionalidad desde la perspectiva del usuario. 
+		Se basa en contar las funciones que el software proporciona, como entradas, salidas, consultas, archivos y interfaces.
+	- Tamaño de modulo: Este no es una métrica estándar para medir el tamaño del software. Podría referirse al tamaño físico de un archivo o componente, 
+		pero no es una medida reconocida en la ingeniería de software.
+
+
+
 Standard Enforcer
+=== es una herramienta o sistema utilizado para garantizar que el código fuente, los documentos o los procesos cumplan con los estándares definidos por una organización, 
+	equipo de desarrollo o industria.
+
+
+
 análisis estático
+=== se define como una opción de prueba para el software de las aplicaciones o programas que usa métodos de revisión que detectan los potenciales fallos, como errores 
+	de funcionamiento, bugs o riesgos en el sistema.
+
+
+
 NCSS
+=== No Comment Section ---
+
+
+
 analizador estatico / inspector de codigo / ejecutor estandar
 generador de pruebas de arnes / de archivo
 herramienta ejecutora estándar
 Execution Verifier
+
+
+
 mantenimiento de softw se clasifica en cuántas categorías (4 ?)
+=== no es que tenga 4 categorias, son 4 tipos de mantenimiento:
+	- preventivo
+	- correctivo
+	- perfectivo 
+	- adaptable 
+
+
+
 fases en Taute Maintenance Model
+
+
+
 pruebas de regresion / sistema / integracion / unitarias
+===
+Pruebas de regresión		Verifican que los cambios no afecten funcionalidades existentes.	Uso principal en mantenimiento.
+Pruebas unitarias		Prueban unidades individuales de código.				Cuando se realizan cambios en el código.
+Pruebas de integración		Verifican la interacción entre módulos o componentes.			Cuando los cambios afectan la integración.
+Pruebas de sistema		Evalúan el sistema completo en su entorno.				Cuando los cambios son significativos.
+
+
+
 técnicas de reevaluación selectiva
+
 eficiencia / presicion / generalidad / inclusividad
+===
+	1. Inclusividad: La inclusividad en las pruebas de software se refiere a la capacidad del software para ser utilizado por una amplia gama de usuarios, incluyendo 
+		aquellos con discapacidades o necesidades especiales.
+	2. Generalidad: se refiere a la capacidad del software para funcionar correctamente en una variedad de condiciones, entornos y casos de uso. 
+	3. Presicion: se refiere a la capacidad del software para producir resultados correctos y consistentes según lo esperado.
+	4. Eficiencia: se refiere a la capacidad del software para utilizar los recursos del sistema (como tiempo, memoria, procesamiento, etc.) de manera óptima.
+
+
+
 diagranas con UML ("considerando el modelaod de bs de datos")
+=== el Unified Modeling Language, tiene varios diagramas divididos en dos tipos:
+
+	1. ESTRUCTURALES: Clases, Componentes, Implementación, Objetos, Paquetes
+	2. COMPORTAMIENTOS(8): Actividades, Comunicación, Secuencia, Maquina de estados, Temporizacion, Casos de uso, Vista de Interacción y Resumen de Interacción
+
+
+
 generalizacion / realizacion / agregacion / dependencia
+
 Diagrama de relaciones entre entidades
+=== tiene 3 niveles, modeloador de datos conceptuales, de datos logicos y datos fisicos
+
+
+
 clases controlador / entidad / limite / negocios
+=== en el diseño de software hay varias clases que se organizan en diferentes categorías según su responsabilidad y función dentro del sistema. donde las mas importantes son:
+	1. Límite (Boundary Classes): Las clases límite son responsables de la interacción entre el sistema y los actores externos, como los usuarios, otros sistemas 
+		o dispositivos. Como UI, APIS, Controladores de dispositivo
+	2. Controlador (Controller Classes): Las clases controlador actúan como intermediarias entre las clases límite y las clases de negocio o entidad. Como,
+		Gestores de flujo, controladores en el patron mvc
+	3. Entidad (Entity Classes): Las clases entidad representan los objetos del dominio del problema, es decir, los conceptos clave del negocio o sistema, como
+		clases como user, product, factura, etc. entidades en el patron de diseño 
+	4. Negocio (Business Classes): Las clases de negocio contienen la lógica del negocio o las reglas del sistema. como servicios de negocio(ServicieBuss, ServiceInvetory)
+		clases que implementan algoritmos
+	5. Datos (Data Classes): Representan estructuras de datos simples. como DTOs (Data Transfer Objects) o POJOs (Plain Old Java Objects).
+	6. Utilidad (Utility Classes): Proporcionan funciones auxiliares o de propósito general. Como Clases para manipulación de cadenas, fechas, matemáticas, etc.
+	7. Servicio (Service Classes): Ofrecen operaciones específicas que no están directamente relacionadas con una entidad. como Servicios de autenticación, 
+		servicios de notificaciones.
+	8. Repositorio (Repository Classes): Gestionan el acceso a datos, como consultas a bases de datos. como Clases que implementan el patrón Repository.
+	9. Clases de Fachada (Facade Classes): Proporcionan una interfaz simplificada para un conjunto de clases o subsistemas. como Fachadas para integración con sistemas externos.
+	10. Valor (Value Objects): Representan objetos inmutables que no tienen identidad propia. como Objetos como Dirección, Dinero, FechaHora.
+
+
+
 modelo de Colaborador de responsabilidad de la clase
 Flujo de ejecución durante la depuración
 prueba de aceptacion / regresion / particion de equivalencia
@@ -396,7 +546,24 @@ ingeniería basada en modelos
 puerto paralelo
 códigos significativos
 ciclo de vida del desarrollo de sistemas (SDLC)
+=== El ciclo de vida del desarrollo de sistemas (SDLC, por sus siglas en inglés) es un enfoque POR FASES para el análisis y el diseño de sistemas informáticos. 
+	Las 7 etapas del ciclo de vida del desarrollo del sistema son:
+	1. Planificación
+	2. Análisis
+	3. Diseño de sistemas
+	4. Desarrollo
+	5. Prueba e integración de sistemas
+	6. Aplicación
+	7. Funcionamiento y mantenimiento
+
+
+
 ciclo de vida del desarrollo de software
+=== El Ciclo de Vida de Desarrollo de Software (SDLC) es un proceso completo de desarrollo de una solución de software con diferentes etapas y pasos para llevar
+	 el software desde la ideación hasta la construcción, despliegue y mantenimiento.
+
+
+
 diagrama de flujo de datos / transicion de estaod / flujo de trabajo / flujo de trabajo
 modelo de proceso evolutivo
 modleo incremental / espiral
