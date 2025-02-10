@@ -5,12 +5,16 @@ malas
 27
 --------------------------------------
 buenas
-22
+43
 
 malas
-3
+15
 
-min 25
+buscar probelamas de camino mas largo
+		  de arbol de descicion de costos (min 42)
+otra def para defragmentacion de bd
+
+min 57
 --------------------------------------
 notas:
 
@@ -134,6 +138,10 @@ metodologias para entregas (cascada, scrum, v-model)
 	LOS MODELOS DE DESARROLLO SON: cascada, v-model, incremental, rad, iterativo, spiral, prototype, agile.
 	LAS METODOLOGIAS AGILES SON:   scrum, kanban, extreme programing(XP)
 https://www.geeksforgeeks.org/top-8-software-development-models-used-in-industry/?ref=lbp
+
+
+
+Para llegar a la implementacion de un modulo,opcion,sistema, SE TUVO QUE HABER PASADO POR UNA PLANEACION,DISEÑO Y DESARROLLO
 
 
 
