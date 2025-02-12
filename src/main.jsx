@@ -10,11 +10,11 @@ import { App } from './TRYS/RouterLazyLoading/App.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   //<React.StrictMode>
-  //<Provider store={store}>
+  <Provider store={store}>
     <BrowserRouter>
-      < App/>
+      <JournalApp />
     </BrowserRouter>
-  //</Provider>
+  </Provider>
     
 
   //</React.StrictMode>,
