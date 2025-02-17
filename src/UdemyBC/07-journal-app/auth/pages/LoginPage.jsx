@@ -1,25 +1,37 @@
 import { Google, Password } from '@mui/icons-material'
-import { Button, Grid, Grid2, Link, TextField, Typography } from '@mui/material'
+import { Alert, Button, Grid, Grid2, Link, TextField, Typography } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
 import { AuthLayout } from '../layout/AuthLayout'
 import { useForm } from '../../hooks'
 import { useDispatch, useSelector } from 'react-redux'
-import { checkingAuthentication, startGoogleSignIn } from '../../store/auth'
-import { useMemo } from 'react'
+import { checkingAuthentication, startGoogleSignIn, startLogingWithEmailPass } from '../../store/auth'
+import { useMemo, useState } from 'react'
 
 const formData = {
-    email: 'bryan@mail.com',
-    password: '1234',
-    displayName: 'Bryan'
+    email: '',
+    password: '',
+    displayName: ''
+};
+
+const formValidations = {
+    email: [(value) => value.includes('@'), 'Email needs to have an @'],
+    password: [(value) => value.length >= 6, 'Password needs to be 6 chars or more'],
 }
 
 export const LoginPage = () => {
 
-    const {status} = useSelector(state => state.auth);
 
     const dispatch = useDispatch();
 
-    const {email, password, onInputChange} = useForm(formData);
+    const [formSubmited, setFormSubmited] = useState(false);
+    
+    //! The "selector" allows me to extract props from the slice, READ THE NOTES
+    const {status, errorMessage} = useSelector(state => state.auth);
+
+    const {displayName, email, password, formState, onInputChange,
+        isFormValid, emailValid, passwordValid,
+    } = useForm(formData, formValidations);
+
 
     //* podemos usar un useMemo para regresar un bool
     //* voy a memorizar el resultado del status
@@ -28,15 +40,25 @@ export const LoginPage = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(email, password);
 
-        dispatch(checkingAuthentication())
+        setFormSubmited(true);
+
+        if(!isFormValid) return;
+
+        const {email, password} = formState;
+        
+        dispatch(checkingAuthentication());
+        dispatch(startLogingWithEmailPass(email, password));
+
+        console.log(displayName);
+        
     };
 
     const onGoogleSignIn = (e) => {
         e.preventDefault();
-        console.log("on google");
-        dispatch(startGoogleSignIn())
+        dispatch(startGoogleSignIn());
+
+        
     }
 
     return (
@@ -44,8 +66,34 @@ export const LoginPage = () => {
                 <form onSubmit={onSubmit}>
                     <Grid container >
                         <Grid item xs={12}>
-                            <TextField label='Email' type='email' placeholder='email' fullWidth name='email' onChange={onInputChange} value={email}/>
-                            <TextField label='Password' type='password' placeholder='password' fullWidth name='password' onChange={onInputChange} value={password}/>
+                            <TextField 
+                                label='Email' 
+                                type='email' 
+                                placeholder='email' 
+                                fullWidth 
+                                name='email' 
+                                value={email} 
+                                error={!!emailValid && formSubmited}
+                                onChange={onInputChange}
+                                helperText={emailValid}
+                                
+                            />
+                            <TextField 
+                                label='Password' 
+                                type='password' 
+                                placeholder='password' 
+                                fullWidth 
+                                name='password' 
+                                value={password}
+                                error={!!passwordValid && formSubmited} 
+                                onChange={onInputChange} 
+                                helperText={passwordValid}
+                            />
+                        </Grid>
+
+                        <Grid item xs={12} display={!!errorMessage ? '' : 'none'}>
+                            <h2>Hello {displayName}</h2>
+                            <Alert severity='error'>{errorMessage}</Alert>
                         </Grid>
 
                         <Grid container spacing={2} sx={{ mb:2, mt:1 }}>
