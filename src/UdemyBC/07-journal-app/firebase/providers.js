@@ -73,3 +73,8 @@ export const logingWithEmailPass = async(remail, passsword) => {
         }
     }
 }
+
+export const logOutFireBase = async() => {
+    return await FirebaseAuth.signOut();
+    
+}

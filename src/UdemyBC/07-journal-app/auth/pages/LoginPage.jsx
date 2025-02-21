@@ -13,11 +13,6 @@ const formData = {
     displayName: ''
 };
 
-const formValidations = {
-    email: [(value) => value.includes('@'), 'Email needs to have an @'],
-    password: [(value) => value.length >= 6, 'Password needs to be 6 chars or more'],
-}
-
 export const LoginPage = () => {
 
 
@@ -26,11 +21,10 @@ export const LoginPage = () => {
     const [formSubmited, setFormSubmited] = useState(false);
     
     //! The "selector" allows me to extract props from the slice, READ THE NOTES
-    const {status, errorMessage} = useSelector(state => state.auth);
+    const {status, errorMessage, displayName} = useSelector(state => state.auth);
 
-    const {displayName, email, password, formState, onInputChange,
-        isFormValid, emailValid, passwordValid,
-    } = useForm(formData, formValidations);
+    const {email, password, formState, onInputChange, isFormValid,
+    } = useForm(formData);
 
 
     //* podemos usar un useMemo para regresar un bool
@@ -49,8 +43,6 @@ export const LoginPage = () => {
         
         dispatch(checkingAuthentication());
         dispatch(startLogingWithEmailPass(email, password));
-
-        console.log(displayName);
         
     };
 
@@ -73,10 +65,8 @@ export const LoginPage = () => {
                                 fullWidth 
                                 name='email' 
                                 value={email} 
-                                error={!!emailValid && formSubmited}
                                 onChange={onInputChange}
-                                helperText={emailValid}
-                                
+                                margin='normal'
                             />
                             <TextField 
                                 label='Password' 
@@ -85,14 +75,12 @@ export const LoginPage = () => {
                                 fullWidth 
                                 name='password' 
                                 value={password}
-                                error={!!passwordValid && formSubmited} 
                                 onChange={onInputChange} 
-                                helperText={passwordValid}
+                                margin='normal'
                             />
                         </Grid>
 
-                        <Grid item xs={12} display={!!errorMessage ? '' : 'none'}>
-                            <h2>Hello {displayName}</h2>
+                        <Grid item xs={12} display={!!errorMessage ? '' : 'none'} marginTop='5px'>
                             <Alert severity='error'>{errorMessage}</Alert>
                         </Grid>
 

@@ -1,4 +1,4 @@
-import { logingWithEmailPass, registerWithEmailPass, signinWithGoogle } from "../../firebase/providers";
+import { logingWithEmailPass, logOutFireBase, registerWithEmailPass, signinWithGoogle } from "../../firebase/providers";
 import { checkingCredentials, login, logout } from "./authSlice";
 
 export const checkingAuthentication = (email, passsword) => {
@@ -36,8 +36,8 @@ export const startCretingUserWithEmailPassword = ({email, password, displayName}
 export const startLogingWithEmailPass = (email, passsword) => {
     return async(dispatch) => {
 
-        //first we call the "checking" for some validations
-        // then 
+        //! missing this on the begginig
+        dispatch(checkingCredentials());
 
         const result = await logingWithEmailPass(email, passsword);
         if(!result.ok) return dispatch(logout({errorMessage: result.errorMessage}));
@@ -46,5 +46,13 @@ export const startLogingWithEmailPass = (email, passsword) => {
         dispatch(login(result));
         
         
+    }
+}
+
+export const startLogOut = () => {
+    return async(dispatch) => {
+        await logOutFireBase();
+
+        dispatch(logout({}));
     }
 }
