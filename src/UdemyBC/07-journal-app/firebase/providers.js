@@ -54,23 +54,17 @@ export const registerWithEmailPass = async({email, password, displayName}) => {
     }
 }
 
-export const logingWithEmailPass = async(remail, passsword) => {
+export const logingWithEmailPass = async({email, passsword}) => {
     
     try{
-        const result = await signInWithEmailAndPassword(FirebaseAuth, remail, passsword);
-        const {displayName, email, photoURL, uid} = result.user;
+        const result = await signInWithEmailAndPassword(FirebaseAuth, email, passsword);
+        const {displayName, photoURL, uid} = result.user;
         return {
             ok: true,
-            displayName, email, photoURL, uid
+            displayName, photoURL, uid
         }
     }catch(error){
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        return{
-            ok: false,
-            errorMessage
-        }
+        return { ok: false, errorMessage: error.message }
     }
 }
 

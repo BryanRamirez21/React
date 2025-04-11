@@ -39,8 +39,8 @@ export const startLogingWithEmailPass = (email, passsword) => {
         //! missing this on the begginig
         dispatch(checkingCredentials());
 
-        const result = await logingWithEmailPass(email, passsword);
-        if(!result.ok) return dispatch(logout({errorMessage: result.errorMessage}));
+        const result = await logingWithEmailPass({email, passsword});
+        if(!result.ok) return dispatch(logout(result));
         
 
         dispatch(login(result));
@@ -53,6 +53,6 @@ export const startLogOut = () => {
     return async(dispatch) => {
         await logOutFireBase();
 
-        dispatch(logout({}));
+        dispatch(logout());
     }
 }
