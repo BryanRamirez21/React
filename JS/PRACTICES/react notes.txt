@@ -1,0 +1,318 @@
+next.js
+
+recuerda que la logica de un componente es que es un tag, crear un componente es crear un tag que se renderiza en app.jsin
+
+la reactividad es una de las propiedades mas importantes de node ya que los hace reactivos, es decir, un componente se llama a si mismo pero ahora toma un valor diferente en una actualizacion.
+
+---------------------------------------
+
+npm create vite@latest
+
+para usarlo es en el file "main.jsx"
+
+----------------------------------------
+
+importante saber que es un syntethic event (aun no lo se)
+
+-----------
+
+CADA COMPONENTE SE EXPORTA/IMPORTA EN MAYUS
+
+------------------------
+
+hay un hook llamado forwardRef, que es para heredar props
+
+---------------------------
+
+useImperativeHandle, nos permite perzonalizar un value de una funcion del DOM (exponer funciones del dom para que otro elemento lo pueda usar)
+
+--------------------------------
+cada componente debe ser emebebido, es decir, cada componente que haga debe existir dentro 
+de un <div> o de un <>
+
+
+---------------------------
+
+IMPORTANTE, NO FUNCIONA HACER "let uno, dos = useRef()" TIENE QUE SER SEPARADO
+
+symbol, es un objeto que es unico (tal vez igual a un indice) en js
+
+PRACTICAR EL USECALLBACK 
+------------------------------
+
+en react no se usa mucho el try-catch, ya que hay varias formas de detectar errores, como los "boundaries"
+
+VISISTA LA PAGINA "USEHOOKS, TANSTACK QUERY"
+
+-----------------------------------
+
+lets install axios (some library to fetch...?)
+in our dir proyect, wew go to the console, npm i axios
+
+------------------------------------------
+there are some libraries (like react-router-dom (EG BOOTCAMP/zustand) ) are necesary to use on the main.jsx
+
+----------------------------------------------
+
+look up for "immer" (eg. bootcamp/zustand/state/stores/user-info.ts)
+immer has the persist func (also same eg above)
+-----------------------------------------------
+the use context main goal its to transffer info not needing events
+
+------------------------------------------------
+
+<input name='nombre' type='text' {...register("nombre", { required: "Este campo es obligatorio" })} />
+                {errors.nombre && <span>{errors.nombre.message}</span>}
+
+------------------------------------------------
+
+yup es una buena libreria para hacer validaciones
+
+-----------------------------------------------------
+
+para los test, cambie:
+"test": "vitest"
+y por alguna razon daba error: "type:module"
+
+the " aria-label:'' " helps us for the test can get a tag by the func "getByRole()"
+
+--------------------------------------------------------
+
+git rm -r --cached src/UdemyBC
+
+git add .
+commit 
+push
+
+------------------------------------------------------------
+when you say "callback" you mean: "() => ({}) / ()"
+eg: "a function w a callback === func(() => ({}))
+    await waitFor(
+            () => expect(result.current.images.length).toBeGreaterThan(0)
+    );
+
+in order to modify a state, you have to modify all the prop of the state, not just use setState and set vals, you have to do it like this:
+ const [counter, setCounter] = useState({
+        counter1: 10,
+        counter2: 10,
+        counter3: 10,
+    });
+<button onClick={() => setCounter({
+        counter1: counter.counter1 + 1,
+        counter2: counter.counter2 + 1,
+        counter3: counter.counter3 + 1,
+            })}>+1</button>
+------------------------------------------------------------------------
+in order to change a state from an input value without calling the state prop name, go to src\UdemyBC\05-Hook-App\02-useEffect\SimpleForm.jsx
+(Seccion 9, cap 123)
+--------------------------------------------------------------------------
+in a async func, you must use the await until you use the data (ref. \UdemyBC\05-Hook-App\03-functionalComponents\hooks\useFetch.js)
+
+"data?.name" === "if we have 'data' look up for prop 'name'"
+
+deestructuring props:
+ 1- <PokemonCard id={data.id} name={data.name} sprites={data.sprites}/>
+ 2- export const PokemonCard = ({id, name, sprites = [] }) =>{}
+(ref. \UdemyBC\05-Hook-App\03-functionalComponents\MultipleCustomHooks.js)  
+-------------------------------------------------------------------------------
+we use the memo when we want to memorize a component with its params (not callbacks)
+ and we use useCallback when we want to memorize component callbacks (not params)
+ (ref. \UdemyBC\05-Hook-App\05-memos\memorize.js && CallBackHook.js) && (ref. \UdemyBC\05-Hook-App\06-tarea-memo\)
+ (secc 9 / ep 136)
+ -------------------------------------------------------------------------------------------
+ different ways to call useCallback:
+
+ const toggleComplete = useCallback((id) => {
+    setTasks(tasks.map(task => (
+        task.id === id ? { ...task, completed: !task.completed } : task
+    )));
+},[]);
+
+const decrement = useCallback( 
+    () => {setCounter((prevCount) => prevCount - 1) },
+[])
+--------------------------------------------------------------------------------------
+useReducer its a pure function, the main goals of a pure function are:
+ - must not have side effects or call another functions..?
+ - must not have async task, always sync
+ - always must return an state
+ - must not call the "localStorage / sessionStorage" (are considered side effects)
+ - in order to modify the state, we must not need more than one action
+ 
+ A reducer function, always has 2 params: the state and an action (the part that will tell the reducer how its suppose to change the state)
+
+ its similar to declare a function, wich will recive an state and an action, the action will work like a switch param inside the reducer, depending on the action, will do an especific task 
+ (ref. \UdemyBC\05-Hook-App\07-useReducer\intro-reducerORG.js)
+
+You must not use push to push an state, NEVER, you must use the spread operator to push into an state
+------------------------------------------------------------------------------------------------
+propiedades computarizadas: UdemyBC\05-Hook-App\02-useEffect\SimpleForm - onInputChange func
+-----------------------------------------------
+avoid memory leaks: UdemyBC\05-Hook-App\02-useEffect\Message.jsx - useEffect
+--------------------------------------------------------------------------------------
+useEffect: Se ejecuta después de que React haya pintado la pantalla. Esto significa que cualquier código en useEffect se ejecutará una vez que el DOM esté actualizado y visible 
+para el usuario. Es ideal para efectos que no afectan el diseño de la página, como solicitudes de datos, suscripciones o cambios que no necesitan bloquear el renderizado visual.
+
+useLayoutEffect: Se ejecuta antes de que el navegador haya pintado la pantalla, pero después de que React haya actualizado el DOM. Este hook bloquea la pintura hasta que haya 
+completado su ejecución. Se utiliza cuando necesitas medir o manipular el DOM de manera inmediata, antes de que los usuarios vean el resultado y deberia usarse siempre que se quiera 
+interactuar directamente con el DOM.
+--------------------------------------------------------------------------------------
+you can use props to reverse send them (like send from a form to a father component)
+and if you are using form, you should reverse send the values (if nedded in the case form its a child component)
+"UdemyBC\05-Hook-App\08-reducer\components\TodoAdd.jsx"
+---------------------------
+In localStorage you only can save plain text, so you need to change it to json if you going to use it in code
+"\UdemyBC\localStorage\useLocalStorage.js"
+----------------------------------
+the: "browserRouter" es un higher order component (HOC) its a normal component BUT it recives more components inside, like: 
+"
+    <c1>
+        <c2>
+            <c3>...
+        </c2>
+    </c1>
+"
+
+the most important hooks on useRrouter are: 
+    Routes, Route{path, element}, link{to, } / navlink
+
+you should always close de "<Route >" in the same, UNLESS...
+
+the simbol on the path prop: "/*", redirects the route if its incorrect or misspelled: "<Route path="/*" element={<page404/>}" BUT ITS NOT THAT USED,
+    because the URL stays on the misspelled URL, instead, we use the router hook: "Navigate"
+    <Route path="/*" element={<Navigate to="/about"/>} />
+
+The equivalent of this <a>, its the <Link>, we use it because the <a> refreshes the entery page/compo, its even recognized in the DOM as the <a> (and for some reason the css also 
+    does recognize the <Link> as a <a>)
+
+another HOC its the <NavLink></NavLink>, its a different version of <Link> but 
+    THE ONLY DIFFERENCE, its that the <NavLink> can recive the classname={"nav-link: active"}, 
+    because its designed to work like the <nav> from html, thats the only thing it does, 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+the process to fetch data its:
+    1- call the url to fetch WITH ASYNC/AWAIT
+        const response = await fetch(URL);
+
+    2- response always has an "ok" status, so we can use that to evaluate if there error
+        if(!response.ok)...
+
+    3- finally, wer put the response into JSON so we can use it
+        const data = await response.json(); 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+usememo para memorizar valores
+useCallback para memorizar funciones
+
+
+
+useLocation = read the query parameters
+querytstring package, can extract info from "search"(useLocation UdemyBC\06-Heroes-Spa\heroes\pages\Search.jsx)
+    object
+    on the objet props, we will always get strings
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+private routes: (\UdemyBC\06-Heroes-Spa\router\PrivateRoute.jsx -- ep 215 udemy)
+    privateRoute
+    publicRoute
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Array.from() == function to transform string to Array
+    const hol = "culo";
+    Array.from(hol)
+    = ['c', 'u', 'l', 'o']
+----------------------------------------------------------------------------------------------------------------------------------------------------
+for useContext =
+    create context -> define funcs, set provider -> use provider as HOC -> use funcs on childs/grandChilds, etc
+----------------------------------------------------------------------------------------------------------------------------------------------------
+TO USE ROUTES:
+    <browserRouter>
+        <Routes>
+            <Route path='login' element={ <Login /> }>
+            <Route path='/*' element={ <Navigate to='/404' /> } />
+        </Routes>
+    </browserRouter
+
+OR...
+
+    export const xxx = () => {
+        const router = createBrowserRouter([
+            { 
+                path: "/",
+                element: <Main />,
+                errorElement: <NotFound />
+            },
+            { 
+                path: "/pages",
+                element: <Pages />,
+                children:[
+                    { 
+                        path: "/pages/:pageID",
+                        element: <subpage />
+                    },
+                ]
+            },  
+        ])
+        return (
+            <>
+                <RouterProvider router={router}>
+                </RouterProvider>
+            </>
+        )
+    }
+
+
+
+        the <Link> and the <a> kind of works the same, using a link to redirect the user,
+            the difference its that the <a> its going to refresh the whole page before showing the new page,
+            and the <Link> will not, only navigate the page not interrumpting or refresh any process
+
+        when we want to <Link> dynamic pages we can use the "path: /page/pageID" the id can be any named, 
+            with this 
+----------------------------------------------------------------------------------------------------------------------------------------------------
+you can pass a comp as child comp, usign props:
+    EG: ep 245 udemy
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+valation on a prop, in an array:
+    email: [(value) => value.includes('@'), '@', 'Email needs to have an @']
+----------------------------------------------------------------------------------------------------------------------------------------------------
+when we have an obj, we can use "!!" to transform it into bool, (instead of possibly recive null)
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+REDUX:
+
+    HOW TO CREATE/USE REDUX TOOLKIT
+
+    (on the main.jsx):
+    <Provider store={sotreRoute} />
+
+
+
+
+    "un thunk es una accion que es async, que dispara otra accion. "
+
+    RTK its super useful because each time you do a fetch, it will always cached prev fetches
+        (src\UdemyBC\08-toolkit-redux\ToDoApp.jsx -- ep 271 udemy react)
+
+
+
+los thunks son acciones que yo puedo dispachar pero tienen una tarea async (si son sincrones las Podemos poner en los reducer )
+
+proceso para usar redux:
+
+creamos nuestro store (store tiene la llamada al reducer de los slices, y se usa configureStore)
+
+creamos nustros slices (slcie tiene el state de lo que vamos a usar[que tiene el nombre, state y reducers], y los reducers con un state como param, el action y/o el payload)
+	dentro de los reducer de los slices, podemos hacer cambios a las props del initalState del slice, usando 	"state.(nombre de la prop del initialState)
+
+	al final, exportamos los nombres de los reducers, que estan dentro del createSlice, como 	"slice.actions" )
+
+Creamos los thunks, que mandaran los reducer para ser usados por los components (creamos como una const a exportar por cada reducer que usaremos, usando como params las props del state/slice al que corresponde, retornando siempre un callback async, que usa como param el dispacth, el callback retornara el "dispacth(funcionDelSlice())
+
+para que un component use un reducer, primero importamos useDispacth(), con eso, se los pondremos a una const que llamamos "dispatch", esa const tendra como param el nombre del reducer que viene del slice, pasa por el thunk y usa el component
+
+    the "store" contains the state of the app and the REDUCER
+
+    when we have an app that uses redux, and a big global state (user data, logins, etc), its recommendable on the store to divide that big state into SLICES
+
+    in order to use our global state (the store) we use the hook: USESELECTOR()

@@ -1,0 +1,1 @@
+- el use ref nos permite tener una var/referencia que no dispara re-renders cuando cambia

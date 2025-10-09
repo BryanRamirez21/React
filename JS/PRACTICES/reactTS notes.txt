@@ -1,0 +1,32 @@
+añadir inter para TS y react: 
+    - create vite@latest -> TS + SWC (alternativa a babel más rapida)
+    - npx eslint --init (preguntará todo lo que queremos hacer para revisión de 
+                        sintaxis, si hara imports/exports, si será en react, etc)
+    - despues de hacer la instalacion, puede ser que las importaciones fallen,
+        tenemos que poner en el inter ("eslinc.config.cjs") donde tenemos el
+        proyecto del TS del JS config:
+            {
+                languageOptions: { globals: globals.browser },
+                parser: tseslint.parser,
+                parserOptions: {
+                    project: "./tsconfig.json",
+                },
+            },
+        
+
+Es preferible que todo lo que podamos dejar como inferencia, sea asi, porque sino
+    vamos a estar tipando demasiado, y eso complica la lectura del codigo
+
+Podemos tener un file con las declaraciones de vars, fc, objs, etc que vamos a usar
+    la sintaxis para el nombre del file es: "nombre.d.ts" donde D es "declarations"
+    dentro solo tendremos las declarciones de los tipos 
+    (ver D:\Documents\Web projects\practice\TS_React-todo\src\types.d.ts)
+
+Hay funciones en TS que permiten que saquemos el type de una prop que queremos usar,
+    por ejemplo: "export type TodoID = Pick<Todo, 'id'>;" que le dara un nombre a una  
+    prop que vamos a exportar para usar en otro file (en lugar de en nuestro file tener:)
+    = (id: number) =>; tendremos: = (id: TodoID) =>).
+    Pero tambien tenemos la funcion "Omit"
+
+otra funcion es el PArtial<>, es un utlity class que "puede ser que sean partes que usaremos
+    pero no son todas obligarotiras"
